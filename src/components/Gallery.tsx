@@ -64,8 +64,8 @@ export default function Gallery() {
           className="text-4xl sm:text-5xl lg:text-6xl font-light"
           style={{ color: charcoal }}
         >
-          Moments de{' '}
-          <span className="italic" style={{ color: blush }}>Beauté</span>
+          Momente der{' '}
+          <span className="italic" style={{ color: blush }}>Schönheit</span>
         </h2>
       </motion.div>
 

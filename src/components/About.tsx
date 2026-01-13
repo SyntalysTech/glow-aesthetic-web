@@ -12,23 +12,23 @@ const cream = '#F9F5F4';
 const features = [
   {
     icon: Sparkles,
-    title: 'Soins Premium',
-    description: 'Technologie de pointe pour des résultats exceptionnels',
+    title: 'Premium Behandlungen',
+    description: 'Spitzentechnologie für außergewöhnliche Ergebnisse',
   },
   {
     icon: Heart,
-    title: 'Attention Personnalisée',
-    description: 'Chaque soin adapté à vos besoins uniques',
+    title: 'Persönliche Betreuung',
+    description: 'Jede Behandlung an Ihre einzigartigen Bedürfnisse angepasst',
   },
   {
     icon: Award,
-    title: 'Professionnels Experts',
-    description: 'Équipe certifiée avec des années d\'expérience',
+    title: 'Experten-Profis',
+    description: 'Zertifiziertes Team mit jahrelanger Erfahrung',
   },
   {
     icon: Clock,
-    title: 'Horaires Flexibles',
-    description: 'Rendez-vous du lundi au samedi pour votre confort',
+    title: 'Flexible Öffnungszeiten',
+    description: 'Termine von Montag bis Samstag für Ihren Komfort',
   },
 ];
 
@@ -117,8 +117,8 @@ export default function About() {
                   <Sparkles className="w-5 h-5" style={{ color: blush }} />
                 </div>
                 <div>
-                  <div className="text-xs" style={{ color: `${charcoal}80` }}>Vérifié</div>
-                  <div className="text-sm font-medium" style={{ color: charcoal }}>5.0 Évaluation</div>
+                  <div className="text-xs" style={{ color: `${charcoal}80` }}>Verifiziert</div>
+                  <div className="text-sm font-medium" style={{ color: charcoal }}>5.0 Bewertung</div>
                 </div>
               </div>
             </motion.div>
@@ -134,23 +134,23 @@ export default function About() {
               className="inline-block text-sm uppercase tracking-[0.3em] mb-4"
               style={{ color: blush }}
             >
-              À Propos de Nous
+              Über Uns
             </span>
             <h2 className="text-4xl sm:text-5xl font-light leading-tight mb-6" style={{ color: charcoal }}>
-              Votre bien-être est{' '}
-              <span className="italic" style={{ color: blush }}>notre passion</span>
+              Ihr Wohlbefinden ist{' '}
+              <span className="italic" style={{ color: blush }}>unsere Leidenschaft</span>
             </h2>
 
             <div className="space-y-6 mb-10" style={{ color: `${charcoal}B3` }}>
               <p>
-                Chez Glow Aesthetics, nous croyons que chaque personne mérite de se sentir radieuse.
-                Situés au cœur de Horgen, nous offrons une oasis de tranquillité
-                où la technologie de pointe rencontre les soins personnalisés.
+                Bei Glow Aesthetics glauben wir, dass jeder Mensch es verdient, sich strahlend zu fühlen.
+                Im Herzen von Horgen gelegen, bieten wir eine Oase der Ruhe,
+                wo Spitzentechnologie auf personalisierte Pflege trifft.
               </p>
               <p>
-                Notre équipe de professionnels certifiés est dédiée à sublimer
-                votre beauté naturelle avec des soins allant des extensions de cils
-                aux traitements innovants avec la technologie Icoone Laser.
+                Unser Team zertifizierter Profis widmet sich der Verschönerung
+                Ihrer natürlichen Schönheit mit Behandlungen von Wimpernverlängerungen
+                bis hin zu innovativen Behandlungen mit der Icoone Laser Technologie.
               </p>
             </div>
 

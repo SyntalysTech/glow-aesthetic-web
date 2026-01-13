@@ -36,7 +36,7 @@ const subscriptions = {
       price: 456,
       originalPrice: 480,
       discount: 5,
-      features: ['3x Microneedling', 'Stimulation du collagène', 'Peau plus ferme'],
+      features: ['3x Microneedling', 'Kollagenstimulation', 'Straffere Haut'],
     },
     {
       name: 'Microneedling mit Lichttherapie',
@@ -44,7 +44,7 @@ const subscriptions = {
       price: 513,
       originalPrice: 540,
       discount: 5,
-      features: ['3x Microneedling mit Lichttherapie', 'Double action rajeunissante', 'Résultats visibles'],
+      features: ['3x Microneedling mit Lichttherapie', 'Doppelte Verjüngungswirkung', 'Sichtbare Ergebnisse'],
       popular: true,
     },
   ],
@@ -55,7 +55,7 @@ const subscriptions = {
       price: 990,
       originalPrice: null,
       discount: null,
-      features: ['10x Einzelbehandlung (1 Zone)', 'Une zone corporelle', 'Raffermissement efficace'],
+      features: ['10x Einzelbehandlung (1 Zone)', 'Eine Körperzone', 'Effektive Straffung'],
     },
     {
       name: 'Icoone Laser (2 Zonen)',
@@ -63,7 +63,7 @@ const subscriptions = {
       price: 850,
       originalPrice: 1200,
       discount: 29,
-      features: ['10x Einzelbehandlung (2 Zonen)', 'Deux zones corporelles', 'Économie maximale'],
+      features: ['10x Einzelbehandlung (2 Zonen)', 'Zwei Körperzonen', 'Maximale Ersparnis'],
       popular: true,
     },
     {
@@ -72,7 +72,7 @@ const subscriptions = {
       price: 1490,
       originalPrice: 1500,
       discount: 1,
-      features: ['10x Einzelbehandlung (3 Zonen)', 'Trois zones corporelles', 'Traitement complet'],
+      features: ['10x Einzelbehandlung (3 Zonen)', 'Drei Körperzonen', 'Komplette Behandlung'],
     },
     {
       name: 'Icoone Laser (4 Zonen)',
@@ -80,7 +80,7 @@ const subscriptions = {
       price: 1690,
       originalPrice: 1800,
       discount: 6,
-      features: ['10x Einzelbehandlung (4 Zonen)', 'Quatre zones corporelles', 'Soin complet du corps'],
+      features: ['10x Einzelbehandlung (4 Zonen)', 'Vier Körperzonen', 'Vollständige Körperbehandlung'],
     },
   ],
   'icoone-5er': [
@@ -90,7 +90,7 @@ const subscriptions = {
       price: 495,
       originalPrice: null,
       discount: null,
-      features: ['5x Einzelbehandlung (1 Zone)', 'Une zone corporelle', 'Programme court'],
+      features: ['5x Einzelbehandlung (1 Zone)', 'Eine Körperzone', 'Kurzes Programm'],
     },
     {
       name: '5er Abo: Icoone Laser (2 Zonen)',
@@ -98,7 +98,7 @@ const subscriptions = {
       price: 595,
       originalPrice: 600,
       discount: 1,
-      features: ['5x Einzelbehandlung (2 Zonen)', 'Deux zones corporelles', 'Solution flexible'],
+      features: ['5x Einzelbehandlung (2 Zonen)', 'Zwei Körperzonen', 'Flexible Lösung'],
       popular: true,
     },
     {
@@ -107,7 +107,7 @@ const subscriptions = {
       price: 745,
       originalPrice: 750,
       discount: 1,
-      features: ['5x Einzelbehandlung (3 Zonen)', 'Trois zones corporelles', 'Traitement ciblé'],
+      features: ['5x Einzelbehandlung (3 Zonen)', 'Drei Körperzonen', 'Gezielte Behandlung'],
     },
     {
       name: '5er Abo: Icoone Laser (4 Zonen)',
@@ -115,7 +115,7 @@ const subscriptions = {
       price: 845,
       originalPrice: 900,
       discount: 6,
-      features: ['5x Einzelbehandlung (4 Zonen)', 'Quatre zones corporelles', 'Programme intensif'],
+      features: ['5x Einzelbehandlung (4 Zonen)', 'Vier Körperzonen', 'Intensivprogramm'],
     },
   ],
   'icoone-6er': [
@@ -125,7 +125,7 @@ const subscriptions = {
       price: 725,
       originalPrice: 870,
       discount: 17,
-      features: ['6x Icoone Gesichtsdrainage', 'Drainage lymphatique facial', 'Visage décongestionnné'],
+      features: ['6x Icoone Gesichtsdrainage', 'Lymphdrainage Gesicht', 'Entstauung des Gesichts'],
     },
     {
       name: '6er Abo: Icoone Anti-Aging',
@@ -133,7 +133,7 @@ const subscriptions = {
       price: 725,
       originalPrice: 870,
       discount: 17,
-      features: ['6x Icoone Anti-Aging', 'Rajeunissement facial', 'Réduction des rides'],
+      features: ['6x Icoone Anti-Aging', 'Gesichtsverjüngung', 'Faltenreduktion'],
       popular: true,
     },
     {
@@ -142,7 +142,7 @@ const subscriptions = {
       price: 725,
       originalPrice: 870,
       discount: 17,
-      features: ['6x Icoone Gesichtsstraffung', 'Tenseur facial', 'Lifting naturel'],
+      features: ['6x Icoone Gesichtsstraffung', 'Gesichtsstraffung', 'Natürliches Lifting'],
     },
     {
       name: '6er Abo: Icoone Remodellierung',
@@ -150,7 +150,7 @@ const subscriptions = {
       price: 725,
       originalPrice: 870,
       discount: 17,
-      features: ['6x Icoone Remodellierung', 'Remodelage corporel', 'Silhouette affinée'],
+      features: ['6x Icoone Remodellierung', 'Körpermodellierung', 'Verfeinerte Silhouette'],
     },
   ],
 };
@@ -199,11 +199,11 @@ export default function Subscriptions() {
             Abonnements
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light" style={{ color: charcoal }}>
-            Économisez avec nos{' '}
-            <span className="italic" style={{ color: blush }}>Forfaits</span>
+            Sparen Sie mit unseren{' '}
+            <span className="italic" style={{ color: blush }}>Paketen</span>
           </h2>
           <p className="mt-6 max-w-xl mx-auto" style={{ color: `${charcoal}99` }}>
-            Des soins premium avec des réductions exclusives. Investissez dans votre beauté de manière intelligente.
+            Premium-Behandlungen mit exklusiven Rabatten. Investieren Sie intelligent in Ihre Schönheit.
           </p>
         </motion.div>
 
@@ -264,7 +264,7 @@ export default function Subscriptions() {
                     style={{ backgroundColor: blush }}
                   >
                     <Sparkles size={12} />
-                    Popular
+                    Beliebt
                   </div>
                 </div>
               )}
@@ -310,7 +310,7 @@ export default function Subscriptions() {
                 {/* Sessions */}
                 <div className="text-center mb-6">
                   <span className="text-3xl font-light" style={{ color: charcoal }}>{sub.sessions}x</span>
-                  <span className="ml-2" style={{ color: `${charcoal}80` }}>séances</span>
+                  <span className="ml-2" style={{ color: `${charcoal}80` }}>Sitzungen
                 </div>
 
                 {/* Features */}
@@ -356,7 +356,7 @@ export default function Subscriptions() {
                     }
                   }}
                 >
-                  Acheter Maintenant
+                  Jetzt Kaufen
                 </a>
               </div>
             </motion.div>

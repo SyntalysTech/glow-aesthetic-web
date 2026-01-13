@@ -14,38 +14,38 @@ const testimonials = [
   {
     id: 1,
     name: 'Maja',
-    date: '6 Janvier 2026',
+    date: '6. Januar 2026',
     rating: 5,
     text: 'Bin perfekt beraten worden. Und bin jetzt endlich glücklich mit meinen Wimpern.',
-    translation: 'J\'ai été parfaitement conseillée. Et maintenant je suis enfin heureuse avec mes cils.',
+    translation: 'Ich wurde perfekt beraten. Und bin jetzt endlich glücklich mit meinen Wimpern.',
     service: 'Wimpernverlängerung',
   },
   {
     id: 2,
     name: 'Sevcan',
-    date: '16 Juin 2025',
+    date: '16. Juni 2025',
     rating: 5,
     text: 'Sehr empfehlenswert! Sehr sympathisch und herzliches Team. Super Wohlfühloase',
-    translation: 'Très recommandable ! Équipe très sympathique et chaleureuse. Super oasis de bien-être.',
-    service: 'Soin du Visage',
+    translation: 'Sehr empfehlenswert! Sehr sympathisch und herzliches Team. Super Wohlfühloase',
+    service: 'Gesichtsbehandlung',
   },
   {
     id: 3,
     name: 'Kübra',
-    date: '8 Avril 2025',
+    date: '8. April 2025',
     rating: 5,
     text: 'Heute war ich bei der lieben Acelya zur Icoone Laser Behandlung – und ich bin super happy! Sie hat sich viel Zeit genommen, alles verständlich erklärt und die Behandlung war total angenehm.',
-    translation: 'Aujourd\'hui j\'étais chez la chère Acelya pour le traitement Icoone Laser - et je suis super contente ! Elle a pris beaucoup de temps, a tout expliqué clairement et le traitement était totalement agréable.',
+    translation: 'Heute war ich bei der lieben Acelya zur Icoone Laser Behandlung – und ich bin super happy! Sie hat sich viel Zeit genommen, alles verständlich erklärt und die Behandlung war total angenehm.',
     service: 'Icoone Laser',
   },
   {
     id: 4,
     name: 'Nilu',
-    date: '29 Mars 2025',
+    date: '29. März 2025',
     rating: 5,
     text: 'Bin super zufrieden, sehr nettes Personal, die ihr Beruf mit Liebe & zu fairen Preisen machen. Ich freue mich auf meinen nächsten Termin!',
-    translation: 'Je suis super satisfaite, personnel très gentil qui fait son travail avec amour et à des prix justes. J\'ai hâte à mon prochain rendez-vous !',
-    service: 'Soin Beauté',
+    translation: 'Bin super zufrieden, sehr nettes Personal, die ihr Beruf mit Liebe & zu fairen Preisen machen. Ich freue mich auf meinen nächsten Termin!',
+    service: 'Beauty Behandlung',
   },
 ];
 
@@ -117,11 +117,11 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <span className="inline-block text-sm uppercase tracking-[0.3em] text-white/70 mb-4">
-            Témoignages
+            Erfahrungen
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white">
-            Ce que disent nos{' '}
-            <span className="italic">clientes</span>
+            Was unsere{' '}
+            <span className="italic">Kunden sagen</span>
           </h2>
         </motion.div>
 

@@ -14,32 +14,32 @@ const services = [
   {
     id: 1,
     title: 'Wimpernverlängerung',
-    subtitle: 'Extensions de Cils',
-    description: 'Obtenez un effet wow durable avec des cils d\'aspect naturel qui subliment votre regard.',
+    subtitle: 'Wimpern Extensions',
+    description: 'Erhalten Sie einen dauerhaften Wow-Effekt mit natürlich aussehenden Wimpern, die Ihren Blick betonen.',
     image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=2187&auto=format&fit=crop',
     accent: 'top-right',
   },
   {
     id: 2,
     title: 'Gesichtsbehandlungen',
-    subtitle: 'Soins du Visage',
-    description: 'Une peau radieuse grâce à des concepts de soins personnalisés. Du Glow Gold à l\'Anti-Âge.',
+    subtitle: 'Gesichtspflege',
+    description: 'Strahlende Haut durch personalisierte Pflegekonzepte. Von Glow Gold bis Anti-Aging.',
     image: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?q=80&w=2070&auto=format&fit=crop',
     accent: 'bottom-left',
   },
   {
     id: 3,
     title: 'Icoone Laser',
-    subtitle: 'Technologie Innovante',
-    description: 'Technologie de pointe pour le raffermissement de la peau et le remodelage corporel avec des résultats visibles.',
+    subtitle: 'Innovative Technologie',
+    description: 'Spitzentechnologie für Hautstraffung und Körpermodellierung mit sichtbaren Ergebnissen.',
     image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2044&auto=format&fit=crop',
     accent: 'top-left',
   },
   {
     id: 4,
     title: 'Microneedling',
-    subtitle: 'Rajeunissement Profond',
-    description: 'Stimule la production naturelle de collagène pour une peau plus ferme et plus jeune.',
+    subtitle: 'Tiefenwirksame Verjüngung',
+    description: 'Stimuliert die natürliche Kollagenproduktion für straffere und jüngere Haut.',
     image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop',
     accent: 'bottom-right',
   },
@@ -80,11 +80,11 @@ export default function Services() {
             className="inline-block text-sm uppercase tracking-[0.3em] mb-4"
             style={{ color: blush }}
           >
-            Nos Services
+            Unsere Services
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light" style={{ color: charcoal }}>
-            Soins{' '}
-            <span className="italic" style={{ color: blush }}>Exclusifs</span>
+            Exklusive{' '}
+            <span className="italic" style={{ color: blush }}>Behandlungen</span>
           </h2>
           <div
             className="w-24 h-[1px] mx-auto mt-8"

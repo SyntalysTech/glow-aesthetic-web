@@ -131,7 +131,7 @@ export default function Hero() {
                 ))}
               </div>
               <span style={{ fontSize: '0.875rem', color: `${charcoal}b3` }}>
-                Excellence en beauté
+                Exzellenz in Schönheit
               </span>
             </motion.div>
 
@@ -150,9 +150,9 @@ export default function Hero() {
                   color: charcoal,
                 }}
               >
-                Votre{' '}
+                Ihr{' '}
                 <span style={{ position: 'relative', display: 'inline-block' }}>
-                  <span style={{ position: 'relative', zIndex: 10 }}>Éclat</span>
+                  <span style={{ position: 'relative', zIndex: 10 }}>Strahlen</span>
                   <motion.span
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -170,8 +170,8 @@ export default function Hero() {
                   />
                 </span>
                 <br />
-                est notre{' '}
-                <span style={{ fontStyle: 'italic', color: blush }}>Passion</span>
+                ist unsere{' '}
+                <span style={{ fontStyle: 'italic', color: blush }}>Leidenschaft</span>
               </h1>
             </motion.div>
 
@@ -188,8 +188,8 @@ export default function Hero() {
                 color: `${charcoal}b3`,
               }}
             >
-              Découvrez des soins de beauté professionnels qui subliment votre beauté naturelle
-              dans un cadre exclusif à Horgen.
+              Entdecken Sie professionelle Schönheitsbehandlungen, die Ihre natürliche Schönheit
+              in einem exklusiven Ambiente in Horgen unterstreichen.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -225,7 +225,7 @@ export default function Hero() {
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = blushDark)}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = blush)}
               >
-                Réserver Maintenant
+                Jetzt Buchen
               </a>
               <a
                 href="#services"
@@ -252,7 +252,7 @@ export default function Hero() {
                   e.currentTarget.style.color = charcoal;
                 }}
               >
-                Voir les Services
+                Services Ansehen
               </a>
             </motion.div>
 
@@ -268,9 +268,9 @@ export default function Hero() {
               }}
             >
               {[
-                { number: '5.0', label: 'Évaluation' },
+                { number: '5.0', label: 'Bewertung' },
                 { number: '3+', label: 'Services' },
-                { number: '100%', label: 'Satisfaction' },
+                { number: '100%', label: 'Zufriedenheit' },
               ].map((stat, index) => (
                 <div key={index} style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.875rem', fontWeight: 300, color: blush }}>
@@ -391,7 +391,7 @@ export default function Hero() {
             color: `${charcoal}66`,
           }}
         >
-          Défiler
+          Scrollen
         </span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
           <ArrowDown size={20} style={{ color: blush }} />

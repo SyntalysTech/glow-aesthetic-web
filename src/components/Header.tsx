@@ -10,9 +10,9 @@ const blushDark = '#C4A5A2';
 const charcoal = '#2D2D2D';
 
 const navItems = [
-  { name: 'Accueil', href: '/' },
+  { name: 'Startseite', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Kontakt', href: '/contact' },
 ];
 
 export default function Header() {
@@ -72,7 +72,7 @@ export default function Header() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ opacity: 0.9 }}>Lun-Ven: 09:00-19:00 | Sam: 09:00-16:00</span>
+            <span style={{ opacity: 0.9 }}>Mo-Fr: 09:00-19:00 | Sa: 09:00-16:00</span>
             <a
               href="https://www.instagram.com/glow.aesthet1cs/"
               target="_blank"
@@ -196,7 +196,7 @@ export default function Header() {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              Prendre Rendez-vous
+              Termin Buchen
             </a>
           </motion.div>
 
@@ -281,7 +281,7 @@ export default function Header() {
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Prendre Rendez-vous
+                  Termin Buchen
                 </a>
               </motion.div>
             </nav>

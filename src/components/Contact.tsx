@@ -10,9 +10,9 @@ const charcoal = '#2D2D2D';
 const cream = '#F9F5F4';
 
 const scheduleItems = [
-  { day: 'Lundi - Vendredi', hours: '09:00 - 19:00' },
-  { day: 'Samedi', hours: '09:00 - 16:00' },
-  { day: 'Dimanche', hours: 'Fermé' },
+  { day: 'Montag - Freitag', hours: '09:00 - 19:00' },
+  { day: 'Samstag', hours: '09:00 - 16:00' },
+  { day: 'Sonntag', hours: 'Geschlossen' },
 ];
 
 export default function Contact() {
@@ -56,7 +56,7 @@ export default function Contact() {
             className="text-4xl sm:text-5xl lg:text-6xl font-light"
             style={{ color: charcoal }}
           >
-            Visitez-nous à{' '}
+            Besuchen Sie uns in{' '}
             <span className="italic" style={{ color: blush }}>Horgen</span>
           </h2>
         </motion.div>
@@ -89,7 +89,7 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-3 text-white">
                   <MapPin className="w-5 h-5" />
-                  <span>Seestrasse 2, 8810 Horgen, Suisse</span>
+                  <span>Seestrasse 2, 8810 Horgen, Schweiz</span>
                 </div>
               </div>
             </div>

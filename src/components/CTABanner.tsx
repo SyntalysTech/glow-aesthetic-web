@@ -67,9 +67,9 @@ export default function CTABanner() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white leading-tight mb-6"
               >
-                Prête à rayonner ?
+                Bereit zum Strahlen?
                 <br />
-                <span className="italic">Votre rendez-vous vous attend</span>
+                <span className="italic">Ihr Termin wartet auf Sie</span>
               </motion.h2>
 
               {/* Description */}
@@ -79,8 +79,8 @@ export default function CTABanner() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-white/80 text-lg mb-10 max-w-lg"
               >
-                Réservez votre soin en ligne en quelques secondes. Votre moment de bien-être
-                et de beauté est à un clic de distance.
+                Buchen Sie Ihre Behandlung online in wenigen Sekunden. Ihr Moment des Wohlbefindens
+                und der Schönheit ist nur einen Klick entfernt.
               </motion.p>
 
               {/* CTA buttons */}
@@ -97,14 +97,14 @@ export default function CTABanner() {
                   className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white rounded-full hover:shadow-xl hover:shadow-white/20 transition-all duration-300"
                   style={{ color: blush }}
                 >
-                  <span className="text-sm font-medium uppercase tracking-wider">Réserver Maintenant</span>
+                  <span className="text-sm font-medium uppercase tracking-wider">Jetzt Buchen</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="tel:+41766092420"
                   className="inline-flex items-center justify-center px-8 py-4 border border-white/30 text-white rounded-full hover:bg-white/10 transition-colors"
                 >
-                  <span className="text-sm uppercase tracking-wider">Appeler</span>
+                  <span className="text-sm uppercase tracking-wider">Anrufen</span>
                 </a>
               </motion.div>
             </div>

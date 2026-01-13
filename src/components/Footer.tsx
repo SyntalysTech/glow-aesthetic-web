@@ -32,11 +32,11 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/60 max-w-sm mb-8">
-              Votre destination beauté à Horgen. Des soins professionnels qui subliment
-              votre beauté naturelle dans un cadre exclusif et relaxant.
+              Ihr Beauty-Destination in Horgen. Professionelle Behandlungen, die Ihre
+              natürliche Schönheit in einem exklusiven und entspannenden Ambiente unterstreichen.
             </p>
             <p className="italic text-lg" style={{ color: blush }}>
-              Votre Éclat est notre Passion
+              Ihr Strahlen ist unsere Leidenschaft
             </p>
           </div>
 
@@ -47,10 +47,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: 'Accueil', href: '/' },
+                { name: 'Startseite', href: '/' },
                 { name: 'Services', href: '/services' },
-                { name: 'Contact', href: '/contact' },
-                { name: 'Prendre Rendez-vous', href: 'https://www.salonkee.ch/salon/glow-aesthetics' },
+                { name: 'Kontakt', href: '/contact' },
+                { name: 'Termin Buchen', href: 'https://www.salonkee.ch/salon/glow-aesthetics' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -94,7 +94,7 @@ export default function Footer() {
                   onMouseLeave={(e) => (e.currentTarget.style.color = '')}
                 >
                   <MapPin size={16} className="flex-shrink-0 mt-0.5" style={{ color: blush }} />
-                  <span>Seestrasse 2<br />8810 Horgen, Suisse</span>
+                  <span>Seestrasse 2<br />8810 Horgen, Schweiz</span>
                 </a>
               </li>
               <li className="flex items-center gap-4 pt-2">
@@ -119,14 +119,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Glow Aesthetics. Tous droits réservés.
+              © {new Date().getFullYear()} Glow Aesthetics. Alle Rechte vorbehalten.
             </p>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="flex items-center gap-1 text-white/40 text-sm"
             >
-              Fait avec <Heart size={14} style={{ color: blush, fill: blush }} /> par Syntalys
+              Gemacht mit <Heart size={14} style={{ color: blush, fill: blush }} /> von Syntalys
             </motion.p>
           </div>
         </div>
