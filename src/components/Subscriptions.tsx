@@ -170,20 +170,6 @@ export default function Subscriptions() {
         style={{ background: `linear-gradient(to bottom, white, ${cream}, white)` }}
       />
 
-      {/* Decorative shapes */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 100, repeat: Infinity, ease: 'linear' }}
-        className="absolute -top-40 -right-40 w-80 h-80 rounded-full"
-        style={{ border: `1px solid ${blush}33` }}
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
-        className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full"
-        style={{ border: `1px solid ${blush}1a` }}
-      />
-
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section header */}
         <motion.div
