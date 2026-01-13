@@ -13,6 +13,13 @@ const blushDark = '#C4A5A2';
 const charcoal = '#2D2D2D';
 const cream = '#F9F5F4';
 
+// Specialist photos
+const specialistPhotos: Record<string, string> = {
+  Sofia: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
+  Elena: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
+  Marina: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
+};
+
 export default function BookingPage() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
@@ -222,9 +229,13 @@ export default function BookingPage() {
                   {service.duration} Min
                 </span>
                 {service.specialist && (
-                  <span className="flex items-center gap-1">
-                    <User size={16} />
-                    {service.specialist}
+                  <span className="flex items-center gap-2">
+                    <img
+                      src={specialistPhotos[service.specialist]}
+                      alt={service.specialist}
+                      className="w-6 h-6 rounded-full object-cover"
+                    />
+                    <span>{service.specialist}</span>
                   </span>
                 )}
               </div>

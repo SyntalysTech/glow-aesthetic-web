@@ -15,6 +15,13 @@ const blushDark = '#C4A5A2';
 const charcoal = '#2D2D2D';
 const cream = '#F9F5F4';
 
+// Specialist photos
+const specialistPhotos: Record<string, string> = {
+  Sofia: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
+  Elena: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
+  Marina: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
+};
+
 export default function ProfilePage() {
   const { user, isAuthenticated, logout, refreshUser } = useAuth();
   const router = useRouter();
@@ -396,8 +403,13 @@ export default function ProfilePage() {
                               <p className="font-medium" style={{ color: charcoal }}>
                                 {item.service.name}
                               </p>
-                              <p className="text-sm" style={{ color: `${charcoal}66` }}>
-                                {item.specialist} • {new Date(item.date).toLocaleDateString('de-CH')} • {item.time}
+                              <p className="text-sm flex items-center gap-2" style={{ color: `${charcoal}66` }}>
+                                <img
+                                  src={specialistPhotos[item.specialist]}
+                                  alt={item.specialist}
+                                  className="w-5 h-5 rounded-full object-cover"
+                                />
+                                <span>{item.specialist} • {new Date(item.date).toLocaleDateString('de-CH')} • {item.time}</span>
                               </p>
                             </div>
                             <p className="font-medium" style={{ color: blush }}>

@@ -14,6 +14,13 @@ const blushDark = '#C4A5A2';
 const charcoal = '#2D2D2D';
 const cream = '#F9F5F4';
 
+// Specialist photos
+const specialistPhotos: Record<string, string> = {
+  Sofia: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
+  Elena: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
+  Marina: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
+};
+
 export default function CartPage() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
@@ -129,7 +136,11 @@ export default function CartPage() {
                             <span>{item.time}</span>
                           </div>
                           <div className="flex items-center gap-2" style={{ color: `${charcoal}80` }}>
-                            <User size={16} style={{ color: blush }} />
+                            <img
+                              src={specialistPhotos[item.specialist]}
+                              alt={item.specialist}
+                              className="w-5 h-5 rounded-full object-cover"
+                            />
                             <span>{item.specialist}</span>
                           </div>
                           <div className="flex items-center gap-2" style={{ color: `${charcoal}80` }}>
