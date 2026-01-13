@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, MapPin, Instagram } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Instagram, User as UserIcon } from 'lucide-react';
 import Link from 'next/link';
+import { useAuth } from '@/contexts/AuthContext';
 
 const blush = '#D6B7B4';
 const blushDark = '#C4A5A2';
@@ -16,6 +17,7 @@ const navItems = [
 ];
 
 export default function Header() {
+  const { isAuthenticated, user } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -195,13 +197,41 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button - Desktop */}
+          {/* User Profile / Login - Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="hidden lg:block"
+            transition={{ delay: 0.45 }}
+            className="hidden lg:flex items-center gap-4"
           >
+            <Link
+              href={isAuthenticated ? '/profile' : '/auth'}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.25rem',
+                backgroundColor: 'transparent',
+                color: isScrolled || isMobileMenuOpen ? charcoal : 'white',
+                fontSize: '0.875rem',
+                textDecoration: 'none',
+                borderRadius: '9999px',
+                border: `2px solid ${isScrolled || isMobileMenuOpen ? blush : 'white'}`,
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = isScrolled || isMobileMenuOpen ? blush : 'white';
+                e.currentTarget.style.color = isScrolled || isMobileMenuOpen ? 'white' : blush;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = isScrolled || isMobileMenuOpen ? charcoal : 'white';
+              }}
+            >
+              <UserIcon size={18} />
+              <span>{isAuthenticated ? user?.firstName || 'Profil' : 'Anmelden'}</span>
+            </Link>
+
             <a
               href="https://www.salonkee.ch/salon/glow-aesthetics"
               target="_blank"
@@ -209,8 +239,8 @@ export default function Header() {
               style={{
                 display: 'inline-block',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: isScrolled ? blush : 'white',
-                color: isScrolled ? 'white' : blush,
+                backgroundColor: isScrolled || isMobileMenuOpen ? blush : 'white',
+                color: isScrolled || isMobileMenuOpen ? 'white' : blush,
                 fontSize: '0.875rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
@@ -219,11 +249,11 @@ export default function Header() {
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = isScrolled ? blushDark : 'rgba(255,255,255,0.9)';
+                e.currentTarget.style.backgroundColor = isScrolled || isMobileMenuOpen ? blushDark : 'rgba(255,255,255,0.9)';
                 e.currentTarget.style.transform = 'scale(1.02)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = isScrolled ? blush : 'white';
+                e.currentTarget.style.backgroundColor = isScrolled || isMobileMenuOpen ? blush : 'white';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
@@ -319,11 +349,40 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Profile/Login Link - Mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                style={{ marginTop: '2rem' }}
+                style={{ marginTop: '1rem' }}
+              >
+                <Link
+                  href={isAuthenticated ? '/profile' : '/auth'}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '1rem 2rem',
+                    backgroundColor: 'transparent',
+                    color: charcoal,
+                    fontSize: '1.125rem',
+                    letterSpacing: '0.05em',
+                    borderRadius: '9999px',
+                    textDecoration: 'none',
+                    border: `2px solid ${blush}`,
+                  }}
+                >
+                  <UserIcon size={20} />
+                  <span>{isAuthenticated ? user?.firstName || 'Profil' : 'Anmelden'}</span>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
               >
                 <a
                   href="https://www.salonkee.ch/salon/glow-aesthetics"
