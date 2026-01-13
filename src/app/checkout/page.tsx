@@ -37,6 +37,7 @@ export default function CheckoutPage() {
     }
     if (cart.length === 0) {
       router.push('/booking');
+      return;
     }
   }, [isAuthenticated, cart, router]);
 
@@ -435,7 +436,6 @@ export default function CheckoutPage() {
           </motion.div>
         )}
       </AnimatePresence>
-      </div>
     </>
   );
 }
