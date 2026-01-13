@@ -267,13 +267,46 @@ export default function Header() {
             }}
             className="lg:hidden"
           >
-            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
+            {/* Top info bar in mobile menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              style={{
+                position: 'absolute',
+                top: '5rem',
+                left: 0,
+                right: 0,
+                padding: '1rem 2rem',
+                backgroundColor: `${blush}1a`,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.75rem',
+                fontSize: '0.875rem',
+                color: charcoal,
+              }}
+            >
+              <a href="tel:+41766092420" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
+                <Phone size={14} style={{ color: blush }} />
+                +41 76 609 24 20
+              </a>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <MapPin size={14} style={{ color: blush }} />
+                Seestrasse 2, 8810 Horgen
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Instagram size={14} style={{ color: blush }} />
+                Mo-Fr: 09:00-19:00 | Sa: 09:00-16:00
+              </span>
+            </motion.div>
+
+            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', marginTop: '6rem' }}>
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.1 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
                 >
                   <Link
                     href={item.href}
@@ -292,7 +325,7 @@ export default function Header() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.5 }}
                 style={{ marginTop: '2rem' }}
               >
                 <a
@@ -316,30 +349,36 @@ export default function Header() {
               </motion.div>
             </nav>
 
-            {/* Contact info mobile */}
+            {/* Instagram link at bottom */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.6 }}
               style={{
                 position: 'absolute',
                 bottom: '2.5rem',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 gap: '0.5rem',
                 fontSize: '0.875rem',
                 color: `${charcoal}99`,
               }}
             >
-              <a href="tel:+41766092420" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
-                <Phone size={14} />
-                +41 76 609 24 20
+              <a
+                href="https://www.instagram.com/glow.aesthet1cs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                <Instagram size={16} style={{ color: blush }} />
+                Folgen Sie uns auf Instagram
               </a>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <MapPin size={14} />
-                Seestrasse 2, 8810 Horgen
-              </span>
             </motion.div>
           </motion.div>
         )}
