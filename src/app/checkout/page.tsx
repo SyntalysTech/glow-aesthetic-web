@@ -104,7 +104,6 @@ export default function CheckoutPage() {
   return (
     <>
       <Header />
-    <>
       <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
         <div className="max-w-5xl mx-auto px-6">
           {/* Header */}
@@ -436,7 +435,7 @@ export default function CheckoutPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+      </div>
     </>
   );
 }

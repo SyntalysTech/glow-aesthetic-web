@@ -190,8 +190,6 @@ export default function ContactPage() {
               {/* CTA */}
               <a
                 href="/booking"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-full transition-colors"
                 style={{ backgroundColor: blush }}
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = blushDark}
@@ -199,7 +197,7 @@ export default function ContactPage() {
               >
                 <span className="uppercase tracking-wider">Réserver en Ligne</span>
                 <ArrowUpRight size={16} />
-              </Link>
+              </a>
             </motion.div>
 
             {/* Hours & Image */}

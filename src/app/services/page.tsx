@@ -290,8 +290,6 @@ export default function ServicesPage() {
           </p>
           <a
             href="/booking"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-full transition-colors"
             style={{ backgroundColor: blush }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = blushDark)}
@@ -299,7 +297,7 @@ export default function ServicesPage() {
           >
             <span className="text-sm uppercase tracking-wider">Voir Tous les Services</span>
             <ArrowUpRight size={16} />
-          </Link>
+          </a>
         </div>
       </section>
 
