@@ -372,12 +372,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
+        className="hidden lg:flex"
         style={{
           position: 'absolute',
           bottom: '2.5rem',
           left: '50%',
           transform: 'translateX(-50%)',
-          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '0.5rem',
