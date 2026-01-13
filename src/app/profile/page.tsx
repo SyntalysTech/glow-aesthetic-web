@@ -7,6 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { updateUser } from '@/lib/auth';
 import { getUserBookings, Booking } from '@/lib/bookings';
 import { User, Mail, Phone, MapPin, Calendar, LogOut, Edit2, Save, X, ShoppingBag } from 'lucide-react';
+import Header from '@/components/Header';
 import Link from 'next/link';
 
 const blush = '#D6B7B4';
@@ -112,6 +113,8 @@ export default function ProfilePage() {
   if (!user) return null;
 
   return (
+    <>
+      <Header />
     <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -421,5 +424,6 @@ export default function ProfilePage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

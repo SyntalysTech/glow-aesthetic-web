@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { User, Mail, Phone, Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Header from '@/components/Header';
 
 const blush = '#D6B7B4';
 const blushDark = '#C4A5A2';
@@ -51,8 +52,10 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
-      <div className="max-w-md mx-auto px-6">
+    <>
+      <Header />
+      <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
+        <div className="max-w-md mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -260,7 +263,8 @@ export default function AuthPage() {
             </div>
           </motion.form>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

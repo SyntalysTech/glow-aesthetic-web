@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { getCart, removeFromCart, BookingItem } from '@/lib/bookings';
 import { Trash2, Calendar, Clock, User, ArrowRight, ShoppingCart } from 'lucide-react';
+import Header from '@/components/Header';
 import Link from 'next/link';
 
 const blush = '#D6B7B4';
@@ -37,6 +38,8 @@ export default function CartPage() {
   if (!isAuthenticated) return null;
 
   return (
+    <>
+      <Header />
     <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
@@ -208,5 +211,6 @@ export default function CartPage() {
         )}
       </div>
     </div>
+    </>
   );
 }

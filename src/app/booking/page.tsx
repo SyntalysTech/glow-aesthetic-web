@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { services, addToCart, getCart, BookingItem, getAvailableSlots } from '@/lib/bookings';
 import { Calendar, Clock, User, ShoppingCart, Plus, ArrowRight, Filter } from 'lucide-react';
+import Header from '@/components/Header';
 
 const blush = '#D6B7B4';
 const blushDark = '#C4A5A2';
@@ -96,6 +97,8 @@ export default function BookingPage() {
   if (!isAuthenticated) return null;
 
   return (
+    <>
+      <Header />
     <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -330,5 +333,6 @@ export default function BookingPage() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   );
 }

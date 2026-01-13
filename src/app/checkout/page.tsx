@@ -7,6 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { getCart, createBooking, clearCart } from '@/lib/bookings';
 import ConsentDocument from '@/components/ConsentDocument';
 import { CreditCard, Smartphone, Banknote, Shield, Check, Loader } from 'lucide-react';
+import Header from '@/components/Header';
 
 const blush = '#D6B7B4';
 const blushDark = '#C4A5A2';
@@ -101,6 +102,8 @@ export default function CheckoutPage() {
   if (!user || cart.length === 0) return null;
 
   return (
+    <>
+      <Header />
     <>
       <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: cream }}>
         <div className="max-w-5xl mx-auto px-6">
@@ -433,6 +436,7 @@ export default function CheckoutPage() {
           </motion.div>
         )}
       </AnimatePresence>
+    </>
     </>
   );
 }
