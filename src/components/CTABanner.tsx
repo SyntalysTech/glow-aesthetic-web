@@ -86,10 +86,8 @@ export default function CTABanner() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <a
+                <Link
                   href="/booking"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white rounded-full hover:shadow-xl hover:shadow-white/20 transition-all duration-300"
                   style={{ color: blush }}
                 >
