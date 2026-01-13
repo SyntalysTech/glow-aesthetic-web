@@ -40,14 +40,13 @@ export default function Header() {
 
   return (
     <>
-      {/* Top bar - desktop only */}
+      {/* Top bar */}
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="hidden lg:block"
         style={{
           backgroundColor: blush,
-          padding: '0.5rem 1.5rem',
+          padding: '0.5rem 1rem',
           display: isScrolled ? 'none' : 'block',
         }}
       >
@@ -59,12 +58,30 @@ export default function Header() {
             justifyContent: 'space-between',
             alignItems: 'center',
             color: 'white',
-            fontSize: '0.875rem',
+            fontSize: '0.75rem',
             flexWrap: 'wrap',
-            gap: '1rem',
+            gap: '0.5rem',
           }}
+          className="lg:text-sm lg:gap-4"
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          {/* Mobile: Only phone */}
+          <a
+            href="tel:+41766092420"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: 'white',
+              textDecoration: 'none',
+            }}
+            className="lg:hidden"
+          >
+            <Phone size={12} />
+            <span>+41 76 609 24 20</span>
+          </a>
+
+          {/* Desktop: Phone + Address */}
+          <div className="hidden lg:flex" style={{ alignItems: 'center', gap: '1.5rem' }}>
             <a
               href="tel:+41766092420"
               style={{
@@ -83,15 +100,18 @@ export default function Header() {
               <span>Seestrasse 2, 8810 Horgen</span>
             </span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ opacity: 0.9 }}>Mo-Fr: 09:00-19:00 | Sa: 09:00-16:00</span>
+
+          {/* Mobile + Desktop: Hours + Instagram */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="lg:gap-4">
+            <span style={{ opacity: 0.9 }} className="hidden sm:inline">Mo-Fr: 09:00-19:00 | Sa: 09:00-16:00</span>
+            <span style={{ opacity: 0.9 }} className="sm:hidden">Mo-Fr: 09-19 | Sa: 09-16</span>
             <a
               href="https://www.instagram.com/glow.aesthet1cs/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'white' }}
             >
-              <Instagram size={16} />
+              <Instagram size={14} className="lg:w-4 lg:h-4" />
             </a>
           </div>
         </div>
@@ -102,16 +122,14 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.1 }}
+        className="fixed w-full z-50"
         style={{
-          position: 'fixed',
-          width: '100%',
-          zIndex: 50,
           transition: 'all 0.5s ease',
           backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : blush,
           backdropFilter: isScrolled ? 'blur(20px)' : 'none',
           boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
           padding: isScrolled ? '0.75rem 0' : '1rem 0',
-          top: isScrolled ? 0 : '2.5rem',
+          top: isScrolled ? 0 : '2rem',
         }}
       >
         <div
