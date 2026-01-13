@@ -1,0 +1,319 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Phone, MapPin, Instagram } from 'lucide-react';
+import Link from 'next/link';
+
+const blush = '#D6B7B4';
+const blushDark = '#C4A5A2';
+const charcoal = '#2D2D2D';
+
+const navItems = [
+  { name: 'Accueil', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact', href: '/contact' },
+];
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      {/* Top bar - desktop only */}
+      <motion.div
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        style={{
+          backgroundColor: blush,
+          padding: '0.5rem 1.5rem',
+          display: isScrolled ? 'none' : 'block',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '80rem',
+            margin: '0 auto',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            color: 'white',
+            fontSize: '0.875rem',
+            flexWrap: 'wrap',
+            gap: '1rem',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <a
+              href="tel:+41766092420"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
+              <Phone size={14} />
+              <span>+41 76 609 24 20</span>
+            </a>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <MapPin size={14} />
+              <span>Seestrasse 2, 8810 Horgen</span>
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ opacity: 0.9 }}>Lun-Ven: 09:00-19:00 | Sam: 09:00-16:00</span>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'white' }}
+            >
+              <Instagram size={16} />
+            </a>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Main header */}
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.1 }}
+        style={{
+          position: 'fixed',
+          width: '100%',
+          zIndex: 50,
+          transition: 'all 0.5s ease',
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : blush,
+          backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+          boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+          padding: isScrolled ? '0.75rem 0' : '1rem 0',
+          top: isScrolled ? 0 : '2.5rem',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '80rem',
+            margin: '0 auto',
+            padding: '0 1.5rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          {/* Logo */}
+          <Link href="/" style={{ position: 'relative', zIndex: 10, textDecoration: 'none' }}>
+            <motion.div whileHover={{ scale: 1.02 }}>
+              <img
+                src="/images/logo.png"
+                alt="Glow Aesthetics"
+                style={{
+                  height: '48px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  filter: isScrolled ? 'invert(1) brightness(0.3)' : 'none',
+                  transition: 'filter 0.3s ease',
+                }}
+              />
+            </motion.div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '3rem',
+            }}
+            className="hidden lg:flex"
+          >
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+              >
+                <Link
+                  href={item.href}
+                  style={{
+                    fontSize: '0.875rem',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    color: isScrolled ? charcoal : 'white',
+                    textDecoration: 'none',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = isScrolled ? blush : 'rgba(255,255,255,0.7)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = isScrolled ? charcoal : 'white')}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
+            ))}
+          </nav>
+
+          {/* CTA Button - Desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
+            className="hidden lg:block"
+          >
+            <a
+              href="https://www.salonkee.ch/salon/glow-aesthetics"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                padding: '0.75rem 1.5rem',
+                backgroundColor: isScrolled ? blush : 'white',
+                color: isScrolled ? 'white' : blush,
+                fontSize: '0.875rem',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                borderRadius: '9999px',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = isScrolled ? blushDark : 'rgba(255,255,255,0.9)';
+                e.currentTarget.style.transform = 'scale(1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = isScrolled ? blush : 'white';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              Prendre Rendez-vous
+            </a>
+          </motion.div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            style={{
+              display: 'block',
+              padding: '0.5rem',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: isScrolled ? charcoal : 'white',
+            }}
+            className="lg:hidden"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </motion.header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 40,
+              backgroundColor: 'white',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            className="lg:hidden"
+          >
+            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    style={{
+                      fontSize: '1.875rem',
+                      fontWeight: 300,
+                      color: charcoal,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                style={{ marginTop: '2rem' }}
+              >
+                <a
+                  href="https://www.salonkee.ch/salon/glow-aesthetics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    padding: '1rem 2rem',
+                    backgroundColor: blush,
+                    color: 'white',
+                    fontSize: '1.125rem',
+                    letterSpacing: '0.05em',
+                    borderRadius: '9999px',
+                    textDecoration: 'none',
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Prendre Rendez-vous
+                </a>
+              </motion.div>
+            </nav>
+
+            {/* Contact info mobile */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              style={{
+                position: 'absolute',
+                bottom: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.875rem',
+                color: `${charcoal}99`,
+              }}
+            >
+              <a href="tel:+41766092420" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
+                <Phone size={14} />
+                +41 76 609 24 20
+              </a>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <MapPin size={14} />
+                Seestrasse 2, 8810 Horgen
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
