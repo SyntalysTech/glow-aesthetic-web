@@ -193,6 +193,98 @@ export default function Subscriptions() {
           </p>
         </motion.div>
 
+        {/* Specialists section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-20"
+        >
+          <h3 className="text-2xl sm:text-3xl font-light text-center mb-12" style={{ color: charcoal }}>
+            Unsere <span className="italic" style={{ color: blush }}>Spezialistinnen</span>
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Specialist 1: Lashes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
+                <img
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
+                  alt="Lash Specialist"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl font-medium mb-2" style={{ color: charcoal }}>Sofia</h4>
+              <p className="text-sm mb-4" style={{ color: `${charcoal}80` }}>Wimpern-Spezialistin</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Wimpernverlängerung
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Lash Lifting
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Specialist 2: Face & Body */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                  alt="Facial Specialist"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl font-medium mb-2" style={{ color: charcoal }}>Elena</h4>
+              <p className="text-sm mb-4" style={{ color: `${charcoal}80` }}>Gesichts- & Körper-Expertin</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Gesichtsbehandlungen
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Microneedling
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Specialist 3: Icoone */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
+                <img
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974&auto=format&fit=crop"
+                  alt="Icoone Specialist"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl font-medium mb-2" style={{ color: charcoal }}>Marina</h4>
+              <p className="text-sm mb-4" style={{ color: `${charcoal}80` }}>Icoone-Technologie-Expertin</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Icoone Laser
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: `${blush}1a`, color: blush }}>
+                  Körpermodellierung
+                </span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
         {/* Category tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
