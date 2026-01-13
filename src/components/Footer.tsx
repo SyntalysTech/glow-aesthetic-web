@@ -10,12 +10,7 @@ const charcoal = '#2D2D2D';
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden" style={{ backgroundColor: charcoal }}>
-      {/* Top wave decoration */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: `linear-gradient(to right, transparent, ${blush}80, transparent)` }}
-      />
+    <footer className="relative" style={{ backgroundColor: charcoal }}>
 
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
