@@ -122,14 +122,15 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.1 }}
-        className="fixed w-full z-50"
+        className="fixed w-full"
         style={{
           transition: 'all 0.5s ease',
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : blush,
-          backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-          boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
-          padding: isScrolled ? '0.75rem 0' : '1rem 0',
-          top: isScrolled ? 0 : '2rem',
+          backgroundColor: isScrolled || isMobileMenuOpen ? 'rgba(255, 255, 255, 0.95)' : blush,
+          backdropFilter: isScrolled || isMobileMenuOpen ? 'blur(20px)' : 'none',
+          boxShadow: isScrolled || isMobileMenuOpen ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+          padding: isScrolled || isMobileMenuOpen ? '0.75rem 0' : '1rem 0',
+          top: isScrolled || isMobileMenuOpen ? 0 : '2rem',
+          zIndex: 101,
         }}
       >
         <div
@@ -152,7 +153,7 @@ export default function Header() {
                   height: '48px',
                   width: 'auto',
                   objectFit: 'contain',
-                  filter: isScrolled ? 'invert(1) brightness(0.3)' : 'none',
+                  filter: isScrolled || isMobileMenuOpen ? 'invert(1) brightness(0.3)' : 'none',
                   transition: 'filter 0.3s ease',
                 }}
               />
@@ -239,7 +240,9 @@ export default function Header() {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: isScrolled ? charcoal : 'white',
+              color: isScrolled || isMobileMenuOpen ? charcoal : 'white',
+              position: 'relative',
+              zIndex: 101,
             }}
             className="lg:hidden"
           >
@@ -258,12 +261,10 @@ export default function Header() {
             style={{
               position: 'fixed',
               inset: 0,
-              zIndex: 40,
+              zIndex: 100,
               backgroundColor: 'white',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              paddingTop: '5.5rem',
+              overflowY: 'auto',
             }}
             className="lg:hidden"
           >
@@ -273,11 +274,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               style={{
-                position: 'absolute',
-                top: '5rem',
-                left: 0,
-                right: 0,
-                padding: '1rem 2rem',
+                padding: '1.5rem 2rem',
                 backgroundColor: `${blush}1a`,
                 display: 'flex',
                 flexDirection: 'column',
@@ -300,7 +297,7 @@ export default function Header() {
               </span>
             </motion.div>
 
-            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', marginTop: '6rem' }}>
+            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', padding: '3rem 2rem' }}>
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -355,11 +352,9 @@ export default function Header() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               style={{
-                position: 'absolute',
-                bottom: '2.5rem',
                 display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
+                justifyContent: 'center',
+                padding: '2rem',
                 fontSize: '0.875rem',
                 color: `${charcoal}99`,
               }}
