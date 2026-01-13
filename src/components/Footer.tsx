@@ -10,7 +10,14 @@ const charcoal = '#2D2D2D';
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden" style={{ backgroundColor: charcoal }}>
+    <footer
+      className="relative overflow-hidden"
+      style={{
+        backgroundColor: charcoal,
+        transform: 'translateZ(0)',
+        isolation: 'isolate',
+      }}
+    >
 
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 py-16">

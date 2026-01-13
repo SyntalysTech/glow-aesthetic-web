@@ -41,11 +41,6 @@ export default function CTABanner() {
             transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute -top-20 -right-20 w-60 h-60 bg-white/10 rounded-full blur-2xl"
           />
-          <motion.div
-            animate={{ scale: [1.2, 1, 1.2] }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-10 left-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl"
-          />
 
           {/* Content */}
           <div className="relative px-8 sm:px-12 lg:px-20 py-16 sm:py-20 lg:py-24">

@@ -31,12 +31,6 @@ export default function Contact() {
         className="absolute top-0 right-0 w-1/2 h-full"
         style={{ background: `linear-gradient(to left, ${blush}1A, transparent)` }}
       />
-      <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl"
-        style={{ backgroundColor: `${blush}0D` }}
-      />
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section header */}
