@@ -310,7 +310,7 @@ export default function Subscriptions() {
                 {/* Sessions */}
                 <div className="text-center mb-6">
                   <span className="text-3xl font-light" style={{ color: charcoal }}>{sub.sessions}x</span>
-                  <span className="ml-2" style={{ color: `${charcoal}80` }}>Sitzungen
+                  <span className="ml-2" style={{ color: `${charcoal}80` }}>Sitzungen</span>
                 </div>
 
                 {/* Features */}
