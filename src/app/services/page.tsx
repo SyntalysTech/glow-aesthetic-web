@@ -184,7 +184,7 @@ function ServiceCategory({ category, index }: { category: typeof serviceCategori
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.8 }}
-          href="https://www.salonkee.ch/salon/glow-aesthetics"
+          href="/booking"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 mt-8 px-6 py-3 text-white rounded-full transition-colors"
@@ -289,7 +289,7 @@ export default function ServicesPage() {
             Visitez notre page de réservation pour voir tous les services et la disponibilité en temps réel.
           </p>
           <a
-            href="https://www.salonkee.ch/salon/glow-aesthetics"
+            href="/booking"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-full transition-colors"
@@ -299,7 +299,7 @@ export default function ServicesPage() {
           >
             <span className="text-sm uppercase tracking-wider">Voir Tous les Services</span>
             <ArrowUpRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
 

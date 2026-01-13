@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -408,7 +409,7 @@ export default function Subscriptions() {
 
                 {/* CTA */}
                 <a
-                  href="https://www.salonkee.ch/salon/glow-aesthetics"
+                  href="/booking"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 text-center text-sm uppercase tracking-wider rounded-full transition-all duration-300"
@@ -435,7 +436,7 @@ export default function Subscriptions() {
                   }}
                 >
                   Jetzt Kaufen
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

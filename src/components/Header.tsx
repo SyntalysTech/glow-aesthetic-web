@@ -233,7 +233,7 @@ export default function Header() {
             </Link>
 
             <a
-              href="https://www.salonkee.ch/salon/glow-aesthetics"
+              href="/booking"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -258,7 +258,7 @@ export default function Header() {
               }}
             >
               Termin Buchen
-            </a>
+            </Link>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -385,7 +385,7 @@ export default function Header() {
                 transition={{ delay: 0.6 }}
               >
                 <a
-                  href="https://www.salonkee.ch/salon/glow-aesthetics"
+                  href="/booking"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -401,7 +401,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Termin Buchen
-                </a>
+                </Link>
               </motion.div>
             </nav>
 

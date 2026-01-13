@@ -189,7 +189,7 @@ export default function ContactPage() {
 
               {/* CTA */}
               <a
-                href="https://www.salonkee.ch/salon/glow-aesthetics"
+                href="/booking"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-full transition-colors"
@@ -199,7 +199,7 @@ export default function ContactPage() {
               >
                 <span className="uppercase tracking-wider">Réserver en Ligne</span>
                 <ArrowUpRight size={16} />
-              </a>
+              </Link>
             </motion.div>
 
             {/* Hours & Image */}

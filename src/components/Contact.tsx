@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -200,7 +201,7 @@ export default function Contact() {
             {/* CTA */}
             <div className="pl-[52px] pt-4">
               <a
-                href="https://www.salonkee.ch/salon/glow-aesthetics"
+                href="/booking"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-white rounded-full transition-colors group"
@@ -210,7 +211,7 @@ export default function Contact() {
               >
                 <span className="text-sm uppercase tracking-wider">Termin Buchen</span>
                 <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowDown, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const blush = '#D6B7B4';
 const blushDark = '#C4A5A2';
@@ -204,10 +205,8 @@ export default function Hero() {
               }}
               className="sm:flex-row"
             >
-              <a
-                href="https://www.salonkee.ch/salon/glow-aesthetics"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/booking"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -226,7 +225,7 @@ export default function Hero() {
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = blush)}
               >
                 Jetzt Buchen
-              </a>
+              </Link>
               <a
                 href="#services"
                 style={{

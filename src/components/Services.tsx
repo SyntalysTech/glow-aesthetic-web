@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -161,7 +162,7 @@ export default function Services() {
                       className="flex-shrink-0 ml-4"
                     >
                       <a
-                        href="https://www.salonkee.ch/salon/glow-aesthetics"
+                        href="/booking"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-sm rounded-full transition-all duration-300"
@@ -170,7 +171,7 @@ export default function Services() {
                         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)')}
                       >
                         <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                      </a>
+                      </Link>
                     </motion.div>
                   </div>
                 </div>
@@ -187,7 +188,7 @@ export default function Services() {
           className="text-center mt-16"
         >
           <a
-            href="https://www.salonkee.ch/salon/glow-aesthetics"
+            href="/booking"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 transition-colors group"
@@ -197,7 +198,7 @@ export default function Services() {
           >
             <span className="text-sm uppercase tracking-widest">Voir Tous les Services</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

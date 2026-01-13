@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -61,7 +62,7 @@ export default function FloatingCTA() {
 
                 <div className="space-y-3">
                   <a
-                    href="https://www.salonkee.ch/salon/glow-aesthetics"
+                    href="/booking"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 w-full px-4 py-3 text-white rounded-xl transition-colors"
@@ -71,7 +72,7 @@ export default function FloatingCTA() {
                   >
                     <Calendar size={18} />
                     <span className="text-sm">Réserver en Ligne</span>
-                  </a>
+                  </Link>
                   <a
                     href="tel:+41766092420"
                     className="flex items-center gap-3 w-full px-4 py-3 border rounded-xl transition-colors"

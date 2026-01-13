@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -86,7 +87,7 @@ export default function CTABanner() {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <a
-                  href="https://www.salonkee.ch/salon/glow-aesthetics"
+                  href="/booking"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white rounded-full hover:shadow-xl hover:shadow-white/20 transition-all duration-300"
@@ -94,7 +95,7 @@ export default function CTABanner() {
                 >
                   <span className="text-sm font-medium uppercase tracking-wider">Jetzt Buchen</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
                 <a
                   href="tel:+41766092420"
                   className="inline-flex items-center justify-center px-8 py-4 border border-white/30 text-white rounded-full hover:bg-white/10 transition-colors"
