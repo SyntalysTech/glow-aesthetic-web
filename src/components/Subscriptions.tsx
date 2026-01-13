@@ -408,9 +408,7 @@ export default function Subscriptions() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href="/booking"
-                  target="_blank"
+                <Link href="/booking"
                   rel="noopener noreferrer"
                   className="block w-full py-4 text-center text-sm uppercase tracking-wider rounded-full transition-all duration-300"
                   style={

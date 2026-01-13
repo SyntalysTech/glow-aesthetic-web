@@ -61,9 +61,7 @@ export default function FloatingCTA() {
                 </h4>
 
                 <div className="space-y-3">
-                  <a
-                    href="/booking"
-                    target="_blank"
+                  <Link href="/booking"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 w-full px-4 py-3 text-white rounded-xl transition-colors"
                     style={{ backgroundColor: isHoveredBook ? blushDark : blush }}

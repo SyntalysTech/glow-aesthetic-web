@@ -161,9 +161,7 @@ export default function Services() {
                       whileTap={{ scale: 0.95 }}
                       className="flex-shrink-0 ml-4"
                     >
-                      <a
-                        href="/booking"
-                        target="_blank"
+                      <Link href="/booking"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-sm rounded-full transition-all duration-300"
                         style={{ ['--hover-bg' as string]: blush }}
@@ -187,9 +185,7 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <a
-            href="/booking"
-            target="_blank"
+          <Link href="/booking"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 transition-colors group"
             style={{ color: charcoal }}

@@ -200,10 +200,8 @@ export default function Contact() {
 
             {/* CTA */}
             <div className="pl-[52px] pt-4">
-              <a
+              <Link
                 href="/booking"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-white rounded-full transition-colors group"
                 style={{ backgroundColor: blush }}
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = blushDark}

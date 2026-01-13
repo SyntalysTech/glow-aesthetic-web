@@ -232,9 +232,7 @@ export default function Header() {
               <span>{isAuthenticated ? user?.firstName || 'Profil' : 'Anmelden'}</span>
             </Link>
 
-            <a
-              href="/booking"
-              target="_blank"
+            <Link href="/booking"
               rel="noopener noreferrer"
               style={{
                 display: 'inline-block',
@@ -384,9 +382,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <a
-                  href="/booking"
-                  target="_blank"
+                <Link href="/booking"
                   rel="noopener noreferrer"
                   style={{
                     display: 'inline-block',
