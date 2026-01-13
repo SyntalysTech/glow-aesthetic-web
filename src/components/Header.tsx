@@ -27,12 +27,24 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       {/* Top bar - desktop only */}
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
+        className="hidden lg:block"
         style={{
           backgroundColor: blush,
           padding: '0.5rem 1.5rem',

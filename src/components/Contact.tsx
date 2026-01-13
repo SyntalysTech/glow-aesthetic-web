@@ -114,7 +114,7 @@ export default function Contact() {
                 >
                   <ExternalLink className="w-5 h-5" style={{ color: blush }} />
                 </div>
-                <span className="text-sm font-medium">Voir sur Google Maps</span>
+                <span className="text-sm font-medium">Auf Google Maps ansehen</span>
               </a>
             </motion.div>
           </motion.div>
@@ -140,7 +140,7 @@ export default function Contact() {
               <p className="pl-[52px]" style={{ color: `${charcoal}B3` }}>
                 Seestrasse 2<br />
                 8810 Horgen<br />
-                Suisse
+                Schweiz
               </p>
             </div>
 
@@ -153,7 +153,7 @@ export default function Contact() {
                 >
                   <Phone className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium" style={{ color: charcoal }}>Téléphone</h3>
+                <h3 className="text-xl font-medium" style={{ color: charcoal }}>Telefon</h3>
               </div>
               <a
                 href="tel:+41766092420"
@@ -173,7 +173,7 @@ export default function Contact() {
                 >
                   <Clock className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium" style={{ color: charcoal }}>Horaires</h3>
+                <h3 className="text-xl font-medium" style={{ color: charcoal }}>Öffnungszeiten</h3>
               </div>
               <div className="pl-[52px] space-y-2">
                 {scheduleItems.map((item) => (
@@ -189,7 +189,7 @@ export default function Contact() {
             <div className="pl-[52px] pt-4">
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/glow.aesthet1cs/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow group"
@@ -198,23 +198,7 @@ export default function Contact() {
                     className="w-5 h-5 group-hover:scale-110 transition-transform"
                     style={{ color: blush }}
                   />
-                  <span className="text-sm" style={{ color: charcoal }}>Instagram</span>
-                </a>
-                <a
-                  href="https://tiktok.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow group"
-                >
-                  <svg
-                    className="w-5 h-5 group-hover:scale-110 transition-transform"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    style={{ color: blush }}
-                  >
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
-                  </svg>
-                  <span className="text-sm" style={{ color: charcoal }}>TikTok</span>
+                  <span className="text-sm" style={{ color: charcoal }}>Folgen Sie uns</span>
                 </a>
               </div>
             </div>
@@ -230,7 +214,7 @@ export default function Contact() {
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = blushDark}
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = blush}
               >
-                <span className="text-sm uppercase tracking-wider">Réserver Votre Rendez-vous</span>
+                <span className="text-sm uppercase tracking-wider">Termin Buchen</span>
                 <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

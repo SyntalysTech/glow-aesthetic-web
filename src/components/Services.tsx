@@ -113,7 +113,7 @@ export default function Services() {
                   {/* Overlay gradient */}
                   <div
                     className="absolute inset-0"
-                    style={{ background: `linear-gradient(to top, ${charcoal}99, transparent, transparent)` }}
+                    style={{ background: `linear-gradient(to top, ${charcoal}DD, ${charcoal}66, transparent)` }}
                   />
 
                   {/* Floating accent shape */}
