@@ -74,7 +74,7 @@ export default function Header() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <span style={{ opacity: 0.9 }}>Lun-Ven: 09:00-19:00 | Sam: 09:00-16:00</span>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/glow.aesthet1cs/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'white' }}
