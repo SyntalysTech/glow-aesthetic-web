@@ -2,10 +2,9 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { MapPin, Phone, Clock, Instagram, Mail, ArrowUpRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { MapPin, Phone, Clock, Instagram, Mail, ArrowUpRight, Send, Check } from 'lucide-react';
 
 const blush = '#baaeb1';
 const blushDark = '#a69c9e';
@@ -13,13 +12,13 @@ const charcoal = '#2D2D2D';
 const cream = '#f7f7f7';
 
 const scheduleItems = [
-  { day: 'Lundi', hours: '09:00 - 19:00' },
-  { day: 'Mardi', hours: '09:00 - 19:00' },
-  { day: 'Mercredi', hours: '09:00 - 19:00' },
-  { day: 'Jeudi', hours: '09:00 - 19:00' },
-  { day: 'Vendredi', hours: '09:00 - 19:00' },
-  { day: 'Samedi', hours: '09:00 - 16:00' },
-  { day: 'Dimanche', hours: 'Fermé' },
+  { day: 'Montag', hours: '09:00 - 19:00' },
+  { day: 'Dienstag', hours: '09:00 - 19:00' },
+  { day: 'Mittwoch', hours: '09:00 - 19:00' },
+  { day: 'Donnerstag', hours: '09:00 - 19:00' },
+  { day: 'Freitag', hours: '09:00 - 19:00' },
+  { day: 'Samstag', hours: '09:00 - 16:00' },
+  { day: 'Sonntag', hours: 'Geschlossen' },
 ];
 
 export default function ContactPage() {
@@ -28,13 +27,40 @@ export default function ContactPage() {
   const contentRef = useRef<HTMLDivElement>(null);
   const contentInView = useInView(contentRef, { once: true, margin: '-100px' });
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // In production, you would send this to your email service
+    console.log('Form submitted:', formData);
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+    // Reset success message after 5 seconds
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
   return (
     <main>
       <Header />
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-32">
-        {/* Background */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2072&auto=format&fit=crop"
@@ -47,7 +73,6 @@ export default function ContactPage() {
           />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +81,7 @@ export default function ContactPage() {
             className="inline-block text-sm uppercase tracking-[0.3em] mb-4"
             style={{ color: blush }}
           >
-            Contact
+            Kontakt
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +89,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight"
           >
-            Visitez-nous à{' '}
+            Besuchen Sie uns in{' '}
             <span className="italic" style={{ color: blush }}>Horgen</span>
           </motion.h1>
         </div>
@@ -81,11 +106,11 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-light mb-8" style={{ color: charcoal }}>
-                Informations de Contact
+                Kontakt<span className="italic" style={{ color: blush }}>informationen</span>
               </h2>
 
               {/* Address */}
-              <div className="mb-10">
+              <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -99,7 +124,7 @@ export default function ContactPage() {
                   <p className="text-lg" style={{ color: `${charcoal}B3` }}>
                     Seestrasse 2<br />
                     8810 Horgen<br />
-                    Suisse
+                    Schweiz
                   </p>
                   <a
                     href="https://maps.google.com/?q=Seestrasse+2+8810+Horgen"
@@ -108,14 +133,14 @@ export default function ContactPage() {
                     className="inline-flex items-center gap-2 mt-3 hover:underline"
                     style={{ color: blush }}
                   >
-                    Voir sur Google Maps
+                    Auf Google Maps anzeigen
                     <ArrowUpRight size={14} />
                   </a>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="mb-10">
+              <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -123,7 +148,7 @@ export default function ContactPage() {
                   >
                     <Phone className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl" style={{ color: charcoal }}>Téléphone</h3>
+                  <h3 className="text-xl" style={{ color: charcoal }}>Telefon</h3>
                 </div>
                 <div className="ml-16">
                   <a
@@ -138,8 +163,32 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Email */}
+              <div className="mb-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: blush }}
+                  >
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl" style={{ color: charcoal }}>E-Mail</h3>
+                </div>
+                <div className="ml-16">
+                  <a
+                    href="mailto:info@glow-aesthetics.ch"
+                    className="text-lg transition-colors"
+                    style={{ color: `${charcoal}B3` }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = blush}
+                    onMouseLeave={(e) => e.currentTarget.style.color = `${charcoal}B3`}
+                  >
+                    info@glow-aesthetics.ch
+                  </a>
+                </div>
+              </div>
+
               {/* Social */}
-              <div className="mb-10">
+              <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -147,11 +196,11 @@ export default function ContactPage() {
                   >
                     <Instagram className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl" style={{ color: charcoal }}>Réseaux Sociaux</h3>
+                  <h3 className="text-xl" style={{ color: charcoal }}>Social Media</h3>
                 </div>
                 <div className="ml-16 flex gap-3">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/glow.aesthet1cs/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-2 rounded-full transition-colors"
@@ -167,62 +216,11 @@ export default function ContactPage() {
                   >
                     Instagram
                   </a>
-                  <a
-                    href="https://tiktok.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2 rounded-full transition-colors"
-                    style={{ border: `1px solid ${blush}33`, color: charcoal }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = blush;
-                      e.currentTarget.style.color = 'white';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.color = charcoal;
-                    }}
-                  >
-                    TikTok
-                  </a>
                 </div>
-              </div>
-
-              {/* CTA */}
-              <a
-                href="/booking"
-                className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-full transition-colors"
-                style={{ backgroundColor: blush }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = blushDark}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = blush}
-              >
-                <span className="uppercase tracking-wider">Réserver en Ligne</span>
-                <ArrowUpRight size={16} />
-              </a>
-            </motion.div>
-
-            {/* Hours & Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={contentInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {/* Image */}
-              <div className="relative rounded-3xl overflow-hidden mb-10">
-                <div className="aspect-video">
-                  <img
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
-                    alt="Glow Aesthetics interior"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div
-                  className="absolute inset-0"
-                  style={{ background: `linear-gradient(to top, ${charcoal}4D, transparent)` }}
-                />
               </div>
 
               {/* Hours */}
-              <div className="rounded-3xl p-8" style={{ backgroundColor: cream }}>
+              <div className="rounded-3xl p-8 mt-8" style={{ backgroundColor: cream }}>
                 <div className="flex items-center gap-4 mb-6">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -230,7 +228,7 @@ export default function ContactPage() {
                   >
                     <Clock className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl" style={{ color: charcoal }}>Heures d'Ouverture</h3>
+                  <h3 className="text-xl" style={{ color: charcoal }}>Öffnungszeiten</h3>
                 </div>
                 <div className="space-y-3">
                   {scheduleItems.map((item) => (
@@ -239,16 +237,15 @@ export default function ContactPage() {
                       className="flex justify-between py-2 last:border-0"
                       style={{
                         borderBottom: `1px solid ${blush}1A`,
-                        color: item.hours === 'Fermé' ? `${charcoal}66` : undefined,
                       }}
                     >
-                      <span style={{ color: item.hours === 'Fermé' ? `${charcoal}66` : charcoal }}>
+                      <span style={{ color: item.hours === 'Geschlossen' ? `${charcoal}66` : charcoal }}>
                         {item.day}
                       </span>
                       <span
                         style={{
-                          color: item.hours === 'Fermé' ? `${charcoal}66` : blush,
-                          fontWeight: item.hours === 'Fermé' ? undefined : 500,
+                          color: item.hours === 'Geschlossen' ? `${charcoal}66` : blush,
+                          fontWeight: item.hours === 'Geschlossen' ? undefined : 500,
                         }}
                       >
                         {item.hours}
@@ -257,6 +254,156 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
+            </motion.div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={contentInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-3xl font-light mb-8" style={{ color: charcoal }}>
+                Nachricht <span className="italic" style={{ color: blush }}>senden</span>
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border transition-colors focus:outline-none"
+                      style={{
+                        borderColor: `${blush}40`,
+                        backgroundColor: cream,
+                      }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = blush}
+                      onBlur={(e) => e.currentTarget.style.borderColor = `${blush}40`}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>
+                      E-Mail *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border transition-colors focus:outline-none"
+                      style={{
+                        borderColor: `${blush}40`,
+                        backgroundColor: cream,
+                      }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = blush}
+                      onBlur={(e) => e.currentTarget.style.borderColor = `${blush}40`}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>
+                      Telefon
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border transition-colors focus:outline-none"
+                      style={{
+                        borderColor: `${blush}40`,
+                        backgroundColor: cream,
+                      }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = blush}
+                      onBlur={(e) => e.currentTarget.style.borderColor = `${blush}40`}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>
+                      Betreff *
+                    </label>
+                    <select
+                      required
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border transition-colors focus:outline-none"
+                      style={{
+                        borderColor: `${blush}40`,
+                        backgroundColor: cream,
+                        color: charcoal,
+                      }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = blush}
+                      onBlur={(e) => e.currentTarget.style.borderColor = `${blush}40`}
+                    >
+                      <option value="">Bitte wählen...</option>
+                      <option value="booking">Terminanfrage</option>
+                      <option value="info">Allgemeine Anfrage</option>
+                      <option value="treatment">Behandlungsfragen</option>
+                      <option value="products">Produktberatung</option>
+                      <option value="other">Sonstiges</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>
+                    Nachricht *
+                  </label>
+                  <textarea
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border transition-colors focus:outline-none resize-none"
+                    style={{
+                      borderColor: `${blush}40`,
+                      backgroundColor: cream,
+                    }}
+                    onFocus={(e) => e.currentTarget.style.borderColor = blush}
+                    onBlur={(e) => e.currentTarget.style.borderColor = `${blush}40`}
+                    placeholder="Wie können wir Ihnen helfen?"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 rounded-full font-medium text-white flex items-center justify-center gap-2 transition-all"
+                  style={{
+                    backgroundColor: isSubmitting ? blushDark : blush,
+                    opacity: isSubmitting ? 0.8 : 1,
+                  }}
+                  onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = blushDark)}
+                  onMouseLeave={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = blush)}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Wird gesendet...</span>
+                    </>
+                  ) : isSubmitted ? (
+                    <>
+                      <Check size={20} />
+                      <span>Nachricht gesendet!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>Nachricht senden</span>
+                    </>
+                  )}
+                </button>
+
+                <p className="text-sm text-center" style={{ color: `${charcoal}80` }}>
+                  Wir antworten in der Regel innerhalb von 24 Stunden.
+                </p>
+              </form>
             </motion.div>
           </div>
         </div>
@@ -276,7 +423,6 @@ export default function ContactPage() {
           />
         </div>
 
-        {/* Overlay card */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-6 shadow-xl text-center">
           <h3 className="text-xl mb-2" style={{ color: charcoal }}>Glow Aesthetics</h3>
           <p className="text-sm mb-4" style={{ color: `${charcoal}99` }}>Seestrasse 2, 8810 Horgen</p>
@@ -287,14 +433,13 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2 text-sm hover:underline"
             style={{ color: blush }}
           >
-            Ouvrir dans Google Maps
+            In Google Maps öffnen
             <ArrowUpRight size={14} />
           </a>
         </div>
       </section>
 
       <Footer />
-      <FloatingCTA />
     </main>
   );
 }

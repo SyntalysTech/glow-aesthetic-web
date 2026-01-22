@@ -50,7 +50,11 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: 'Startseite', href: '/' },
-                { name: 'Services', href: '/services' },
+                { name: 'Über Uns', href: '/about' },
+                { name: 'Behandlungen', href: '/behandlungen' },
+                { name: 'Preise', href: '/preise' },
+                { name: 'Shop', href: '/shop' },
+                { name: 'Bewertungen', href: '/bewertungen' },
                 { name: 'Kontakt', href: '/contact' },
                 { name: 'Termin Buchen', href: '/booking' },
               ].map((link) => (
@@ -121,8 +125,22 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Glow Aesthetics. Alle Rechte vorbehalten.
+              © {new Date().getFullYear()} Glow Aesthetics GmbH. Alle Rechte vorbehalten.
             </p>
+            <div className="flex items-center gap-4 text-sm">
+              <Link
+                href="/impressum"
+                className="text-white/40 hover:text-white/60 transition-colors"
+              >
+                Impressum
+              </Link>
+              <Link
+                href="/datenschutz"
+                className="text-white/40 hover:text-white/60 transition-colors"
+              >
+                Datenschutz
+              </Link>
+            </div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

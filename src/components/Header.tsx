@@ -12,7 +12,10 @@ const charcoal = '#2D2D2D';
 
 const navItems = [
   { name: 'Startseite', href: '/' },
-  { name: 'Services', href: '/services' },
+  { name: 'Über Uns', href: '/about' },
+  { name: 'Behandlungen', href: '/behandlungen' },
+  { name: 'Preise', href: '/preise' },
+  { name: 'Shop', href: '/shop' },
   { name: 'Kontakt', href: '/contact' },
 ];
 
