@@ -16,21 +16,21 @@ const lashTypes = [
     description: 'Eine Verlängerung pro Naturwimper für einen natürlichen, eleganten Look.',
     price: 150,
     duration: '120 Min',
-    image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
   },
   {
     name: 'Volume',
     description: 'Mehrere feine Extensions pro Wimper für mehr Fülle und Dramatik.',
     price: 180,
     duration: '150 Min',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
   },
   {
     name: 'Mega Volume',
     description: 'Maximale Dichte für einen glamourösen, ausdrucksstarken Look.',
     price: 200,
     duration: '180 Min',
-    image: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function WimpernPage() {
       <section className="relative min-h-[70vh] flex items-center pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=1920&h=1080&fit=crop"
+            src="https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Wimpernverlängerung"
             className="w-full h-full object-cover"
           />

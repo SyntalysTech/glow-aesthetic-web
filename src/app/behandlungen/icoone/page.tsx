@@ -35,7 +35,7 @@ export default function IcoonePage() {
       <section className="relative min-h-[70vh] flex items-center pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&h=1080&fit=crop"
+            src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="ICOONE Behandlung"
             className="w-full h-full object-cover"
           />
@@ -131,7 +131,7 @@ export default function IcoonePage() {
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=1000&fit=crop"
+                  src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                   alt="ICOONE Ergebnisse"
                   className="w-full h-full object-cover"
                 />

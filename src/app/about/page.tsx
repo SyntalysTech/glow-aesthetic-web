@@ -37,19 +37,19 @@ const team = [
   {
     name: 'Sofia',
     role: 'Gründerin & Wimpern-Spezialistin',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
     description: 'Mit über 8 Jahren Erfahrung in der Wimpernverlängerung ist Sofia eine wahre Künstlerin ihres Fachs.',
   },
   {
     name: 'Elena',
     role: 'Gesichts- & Körper-Expertin',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
     description: 'Elena verbindet traditionelle Techniken mit modernster Technologie für strahlende Ergebnisse.',
   },
   {
     name: 'Marina',
     role: 'Icoone-Technologie-Expertin',
-    image: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/3762940/pexels-photo-3762940.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
     description: 'Als zertifizierte Icoone-Spezialistin sorgt Marina für perfekte Körperkonturierung.',
   },
 ];
@@ -70,7 +70,7 @@ export default function AboutPage() {
       <section ref={heroRef} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/3997390/pexels-photo-3997390.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
             alt="Glow Aesthetics Studio"
             className="w-full h-full object-cover"
           />
@@ -136,7 +136,7 @@ export default function AboutPage() {
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Glow Aesthetics Behandlung"
                   className="w-full h-full object-cover"
                 />

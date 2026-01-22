@@ -26,7 +26,7 @@ export default function LashLiftingPage() {
       <section className="relative min-h-[70vh] flex items-center pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop"
+            src="https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Lash & Brow Lifting"
             className="w-full h-full object-cover"
           />

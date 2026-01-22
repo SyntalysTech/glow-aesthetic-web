@@ -17,7 +17,7 @@ const reviews = [
     date: 'Januar 2025',
     treatment: 'Volume Wimpernverlängerung',
     text: 'Ich bin absolut begeistert! Sofia hat mir wunderschöne Wimpern gezaubert. Das Ergebnis ist natürlich und gleichzeitig glamourös. Der gesamte Ablauf war professionell und entspannend.',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Sandra K.',
@@ -25,7 +25,7 @@ const reviews = [
     date: 'Dezember 2024',
     treatment: 'ICOONE® Körperbehandlung',
     text: 'Nach 5 Behandlungen mit ICOONE kann ich bereits deutliche Verbesserungen sehen. Marina erklärt alles sehr gut und geht auf individuelle Wünsche ein. Sehr empfehlenswert!',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Lisa B.',
@@ -33,7 +33,7 @@ const reviews = [
     date: 'Dezember 2024',
     treatment: 'Préime DermaFacial',
     text: 'Meine Haut hat noch nie so gut ausgesehen! Elena ist eine wahre Expertin. Die Behandlung war entspannend und das Ergebnis ist einfach fantastisch. Meine neue Lieblingsbehandlung!',
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Maria T.',
@@ -41,7 +41,7 @@ const reviews = [
     date: 'November 2024',
     treatment: 'Lash Lifting',
     text: 'Perfektes Ergebnis! Meine natürlichen Wimpern sehen jetzt so viel voller und geschwungener aus. Der Effekt hält wirklich lange und die Pflege ist minimal.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Julia W.',
@@ -49,7 +49,7 @@ const reviews = [
     date: 'November 2024',
     treatment: 'Microneedling',
     text: 'Nach meinem Microneedling bei Elena ist meine Haut so viel straffer und frischer. Die Beratung war umfassend und ich fühlte mich bestens aufgehoben.',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Nicole H.',
@@ -57,7 +57,7 @@ const reviews = [
     date: 'Oktober 2024',
     treatment: 'Mega Volume Wimpernverlängerung',
     text: 'WOW! Ich bin sprachlos. Die Mega Volume Wimpern sind ein Traum! Sofia hat genau verstanden, was ich wollte. Das Studio ist wunderschön und das Team super freundlich.',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Petra S.',
@@ -65,7 +65,7 @@ const reviews = [
     date: 'Oktober 2024',
     treatment: 'Anti-Aging Behandlung',
     text: 'Eine absolute Wohlfühloase! Die Anti-Aging Behandlung war himmlisch entspannend und die Ergebnisse sprechen für sich. Meine Haut strahlt wie lange nicht mehr.',
-    image: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
   {
     name: 'Sabine L.',
@@ -73,7 +73,7 @@ const reviews = [
     date: 'September 2024',
     treatment: 'Brow Lifting',
     text: 'Endlich perfekte Augenbrauen! Das Brow Lifting hat mein Gesicht komplett verwandelt. Ich spare jetzt so viel Zeit beim Schminken. Danke an das tolle Team!',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=faces',
+    image: 'https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
   },
 ];
 

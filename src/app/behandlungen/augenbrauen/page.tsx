@@ -27,7 +27,7 @@ export default function AugenbrauenPage() {
       <section className="relative min-h-[70vh] flex items-center pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=1920&h=1080&fit=crop"
+            src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Augenbrauen"
             className="w-full h-full object-cover"
           />

@@ -63,7 +63,7 @@ export default function ContactPage() {
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2072&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=2072&fit=crop"
             alt="Contact background"
             className="w-full h-full object-cover"
           />
