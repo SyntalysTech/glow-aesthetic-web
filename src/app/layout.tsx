@@ -11,15 +11,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://glow-aesthetic.vercel.app"),
   title: "Glow Aesthetics | Your Glow is Our Flow",
   description: "Ihr Beauty-Ziel in Horgen, Schweiz. Professionelle Wimpernverlängerungen, Gesichtsbehandlungen, Microneedling und Icoone Laser, die Ihre natürliche Schönheit unterstreichen.",
   keywords: ["Beauty-Salon", "Horgen", "Wimpernverlängerung", "Gesichtsbehandlungen", "Icoone Laser", "Microneedling", "Spa", "Schweiz"],
   authors: [{ name: "Glow Aesthetics" }],
+  icons: {
+    icon: "/images/logo-square.png",
+    apple: "/images/logo-square.png",
+  },
   openGraph: {
     title: "Glow Aesthetics | Your Glow is Our Flow",
     description: "Ihr Beauty-Ziel in Horgen, Schweiz. Professionelle Behandlungen, die Ihre natürliche Schönheit unterstreichen.",
     type: "website",
     locale: "de_CH",
+    siteName: "Glow Aesthetics",
+    images: [
+      {
+        url: "/images/logo-square.png",
+        width: 500,
+        height: 500,
+        alt: "Glow Aesthetics Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Glow Aesthetics | Your Glow is Our Flow",
+    description: "Ihr Beauty-Ziel in Horgen, Schweiz. Professionelle Behandlungen, die Ihre natürliche Schönheit unterstreichen.",
+    images: ["/images/logo-square.png"],
   },
 };
 
