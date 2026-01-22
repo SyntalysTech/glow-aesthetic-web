@@ -1,11 +1,14 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { User, getCurrentUser, login as authLogin, logout as authLogout, register as authRegister } from '@/lib/auth';
+import { getSupabaseClient } from '@/lib/supabase';
 
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
+  isAdmin: boolean;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   register: (data: {
     email: string;
@@ -14,8 +17,8 @@ interface AuthContextType {
     phone: string;
     password: string;
   }) => Promise<{ success: boolean; error?: string }>;
-  logout: () => void;
-  refreshUser: () => void;
+  logout: () => Promise<void>;
+  refreshUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -23,17 +26,54 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const currentUser = getCurrentUser();
-    if (currentUser) {
-      setUser(currentUser);
-      setIsAuthenticated(true);
+  const refreshUser = useCallback(async () => {
+    try {
+      const currentUser = await getCurrentUser();
+      if (currentUser) {
+        setUser(currentUser);
+        setIsAuthenticated(true);
+      } else {
+        setUser(null);
+        setIsAuthenticated(false);
+      }
+    } catch (error) {
+      console.error('Error refreshing user:', error);
+      setUser(null);
+      setIsAuthenticated(false);
     }
   }, []);
 
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+
+    // Initial session check
+    const initAuth = async () => {
+      setIsLoading(true);
+      await refreshUser();
+      setIsLoading(false);
+    };
+
+    initAuth();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        await refreshUser();
+      } else if (event === 'SIGNED_OUT') {
+        setUser(null);
+        setIsAuthenticated(false);
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [refreshUser]);
+
   const login = async (email: string, password: string) => {
-    const result = authLogin(email, password);
+    const result = await authLogin(email, password);
     if (result.success && result.user) {
       setUser(result.user);
       setIsAuthenticated(true);
@@ -48,7 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     phone: string;
     password: string;
   }) => {
-    const result = authRegister(data);
+    const result = await authRegister(data);
     if (result.success && result.user) {
       setUser(result.user);
       setIsAuthenticated(true);
@@ -56,19 +96,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return result;
   };
 
-  const logout = () => {
-    authLogout();
+  const logout = async () => {
+    await authLogout();
     setUser(null);
     setIsAuthenticated(false);
   };
 
-  const refreshUser = () => {
-    const currentUser = getCurrentUser();
-    setUser(currentUser);
-  };
-
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, login, register, logout, refreshUser }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated,
+        isLoading,
+        isAdmin: user?.isAdmin ?? false,
+        login,
+        register,
+        logout,
+        refreshUser,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

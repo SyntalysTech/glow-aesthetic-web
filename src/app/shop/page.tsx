@@ -78,7 +78,7 @@ const products = [
     name: 'Retinol Night Cream',
     category: 'Pflege',
     price: 95,
-    image: 'https://images.pexels.com/photos/3785170/pexels-photo-3785170.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
     description: 'Anti-Aging Nachtpflege mit Retinol',
     rating: 4.9,
     bestseller: true,

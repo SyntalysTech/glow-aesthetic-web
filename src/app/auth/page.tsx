@@ -22,13 +22,21 @@ export default function AuthPage() {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
 
-  const { login, register } = useAuth();
+  const { login, register, isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
+
+  // Redirect if already authenticated
+  if (!isLoading && isAuthenticated) {
+    router.push('/profile');
+    return null;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setSuccess('');
     setLoading(true);
 
     try {
@@ -40,7 +48,13 @@ export default function AuthPage() {
       }
 
       if (result.success) {
-        router.push('/profile');
+        if (!isLogin) {
+          setSuccess('Registrierung erfolgreich! Sie können sich nun anmelden.');
+          setIsLogin(true);
+          setPassword('');
+        } else {
+          router.push('/profile');
+        }
       } else {
         setError(result.error || 'Ein Fehler ist aufgetreten');
       }
@@ -84,6 +98,15 @@ export default function AuthPage() {
                 style={{ backgroundColor: '#fee', color: '#c33' }}
               >
                 {error}
+              </div>
+            )}
+
+            {success && (
+              <div
+                className="mb-6 p-4 rounded-xl text-sm"
+                style={{ backgroundColor: '#efe', color: '#363' }}
+              >
+                {success}
               </div>
             )}
 

@@ -45,13 +45,16 @@ export default function BookingPage() {
   }, []);
 
   useEffect(() => {
-    if (selectedDate && selectedService) {
-      const service = services.find((s) => s.id === selectedService);
-      if (service) {
-        const slots = getAvailableSlots(selectedDate, service.specialist || '');
-        setAvailableSlots(slots);
+    const loadSlots = async () => {
+      if (selectedDate && selectedService) {
+        const service = services.find((s) => s.id === selectedService);
+        if (service) {
+          const slots = await getAvailableSlots(selectedDate, service.specialist || '');
+          setAvailableSlots(slots);
+        }
       }
-    }
+    };
+    loadSlots();
   }, [selectedDate, selectedService]);
 
   const filteredServices = selectedCategory === 'all'

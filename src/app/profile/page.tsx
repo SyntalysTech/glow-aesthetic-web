@@ -23,9 +23,10 @@ const specialistPhotos: Record<string, string> = {
 };
 
 export default function ProfilePage() {
-  const { user, isAuthenticated, logout, refreshUser } = useAuth();
+  const { user, isAuthenticated, isLoading, logout, refreshUser } = useAuth();
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [bookings, setBookings] = useState<Booking[]>([]);
 
   const [formData, setFormData] = useState({
@@ -39,7 +40,7 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isLoading && !isAuthenticated) {
       router.push('/auth');
       return;
     }
@@ -55,16 +56,20 @@ export default function ProfilePage() {
         postalCode: user.address?.postalCode || '',
       });
 
-      // Load bookings
-      const userBookings = getUserBookings(user.id);
-      setBookings(userBookings.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+      // Load bookings asynchronously
+      const loadBookings = async () => {
+        const userBookings = await getUserBookings(user.id);
+        setBookings(userBookings.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+      };
+      loadBookings();
     }
-  }, [isAuthenticated, user, router]);
+  }, [isAuthenticated, isLoading, user, router]);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!user) return;
+    setIsSaving(true);
 
-    const result = updateUser({
+    const result = await updateUser({
       firstName: formData.firstName,
       lastName: formData.lastName,
       phone: formData.phone,
@@ -77,13 +82,14 @@ export default function ProfilePage() {
     });
 
     if (result.success) {
-      refreshUser();
+      await refreshUser();
       setIsEditing(false);
     }
+    setIsSaving(false);
   };
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     router.push('/');
   };
 
@@ -116,6 +122,20 @@ export default function ProfilePage() {
         return status;
     }
   };
+
+  if (isLoading) {
+    return (
+      <>
+        <Header />
+        <div className="min-h-screen pt-32 pb-20 flex items-center justify-center" style={{ backgroundColor: cream }}>
+          <div className="animate-pulse text-center">
+            <div className="w-16 h-16 rounded-full mx-auto mb-4" style={{ backgroundColor: blush }} />
+            <p style={{ color: charcoal }}>Laden...</p>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   if (!user) return null;
 

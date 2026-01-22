@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Clock, Instagram, Mail, ArrowUpRight, Send, Check } from 'lucide-react';
+import { getSupabaseClient } from '@/lib/supabase';
 
 const blush = '#baaeb1';
 const blushDark = '#a69c9e';
@@ -36,23 +37,42 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const supabase = getSupabaseClient();
 
-    // In production, you would send this to your email service
-    console.log('Form submitted:', formData);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: submitError } = await (supabase as any)
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          subject: formData.subject,
+          message: formData.message,
+        });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      if (submitError) {
+        throw submitError;
+      }
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -267,6 +287,12 @@ export default function ContactPage() {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="p-4 rounded-xl text-sm" style={{ backgroundColor: '#fee', color: '#c33' }}>
+                    {error}
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2" style={{ color: charcoal }}>

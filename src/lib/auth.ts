@@ -1,4 +1,6 @@
-// Authentication and user management with localStorage
+// Authentication with Supabase
+import { getSupabaseClient } from './supabase';
+import type { Profile } from './supabase/types';
 
 export interface User {
   id: string;
@@ -12,6 +14,7 @@ export interface User {
     city: string;
     postalCode: string;
   };
+  isAdmin: boolean;
   createdAt: string;
 }
 
@@ -20,113 +23,212 @@ export interface AuthState {
   isAuthenticated: boolean;
 }
 
-const AUTH_KEY = 'glow_auth';
-const USERS_KEY = 'glow_users';
+// Convert Supabase profile to User
+const profileToUser = (profile: Profile): User => ({
+  id: profile.id,
+  email: profile.email,
+  firstName: profile.first_name || '',
+  lastName: profile.last_name || '',
+  phone: profile.phone || '',
+  dateOfBirth: undefined,
+  address: profile.address ? {
+    street: profile.address,
+    city: profile.city || '',
+    postalCode: profile.postal_code || '',
+  } : undefined,
+  isAdmin: profile.is_admin,
+  createdAt: profile.created_at,
+});
 
-// Get current user
-export const getCurrentUser = (): User | null => {
-  if (typeof window === 'undefined') return null;
-  const authData = localStorage.getItem(AUTH_KEY);
-  if (!authData) return null;
-  return JSON.parse(authData);
-};
+// Get current user profile
+export const getCurrentUser = async (): Promise<User | null> => {
+  const supabase = getSupabaseClient();
 
-// Get all users (for login validation)
-const getUsers = (): User[] => {
-  if (typeof window === 'undefined') return [];
-  const users = localStorage.getItem(USERS_KEY);
-  return users ? JSON.parse(users) : [];
-};
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
 
-// Save users
-const saveUsers = (users: User[]) => {
-  localStorage.setItem(USERS_KEY, JSON.stringify(users));
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+    .single();
+
+  if (!profile) return null;
+
+  return profileToUser(profile);
 };
 
 // Register new user
-export const register = (data: {
+export const register = async (data: {
   email: string;
   firstName: string;
   lastName: string;
   phone: string;
   password: string;
-}): { success: boolean; user?: User; error?: string } => {
-  const users = getUsers();
+}): Promise<{ success: boolean; user?: User; error?: string }> => {
+  const supabase = getSupabaseClient();
 
-  // Check if email already exists
-  if (users.find(u => u.email === data.email)) {
-    return { success: false, error: 'Diese E-Mail-Adresse wird bereits verwendet' };
+  // Sign up with Supabase Auth
+  const { data: authData, error: authError } = await supabase.auth.signUp({
+    email: data.email,
+    password: data.password,
+    options: {
+      data: {
+        first_name: data.firstName,
+        last_name: data.lastName,
+        phone: data.phone,
+      },
+    },
+  });
+
+  if (authError) {
+    if (authError.message.includes('already registered')) {
+      return { success: false, error: 'Diese E-Mail-Adresse wird bereits verwendet' };
+    }
+    return { success: false, error: authError.message };
   }
 
-  const newUser: User = {
-    id: `user_${Date.now()}`,
-    email: data.email,
-    firstName: data.firstName,
-    lastName: data.lastName,
-    phone: data.phone,
-    createdAt: new Date().toISOString(),
-  };
+  if (!authData.user) {
+    return { success: false, error: 'Registrierung fehlgeschlagen' };
+  }
 
-  users.push(newUser);
-  saveUsers(users);
+  // Update profile with additional info (trigger should have created it)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error: profileError } = await (supabase as any)
+    .from('profiles')
+    .update({
+      first_name: data.firstName,
+      last_name: data.lastName,
+      phone: data.phone,
+    })
+    .eq('id', authData.user.id);
 
-  // Store password separately (in real app, this would be hashed on backend)
-  const passwords = JSON.parse(localStorage.getItem('glow_passwords') || '{}');
-  passwords[data.email] = data.password;
-  localStorage.setItem('glow_passwords', JSON.stringify(passwords));
+  if (profileError) {
+    console.error('Profile update error:', profileError);
+  }
 
-  // Set as current user
-  localStorage.setItem(AUTH_KEY, JSON.stringify(newUser));
+  // Fetch the complete profile
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', authData.user.id)
+    .single();
 
-  return { success: true, user: newUser };
+  if (!profile) {
+    return { success: true, user: {
+      id: authData.user.id,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      isAdmin: false,
+      createdAt: new Date().toISOString(),
+    }};
+  }
+
+  return { success: true, user: profileToUser(profile) };
 };
 
 // Login user
-export const login = (email: string, password: string): { success: boolean; user?: User; error?: string } => {
-  const users = getUsers();
-  const user = users.find(u => u.email === email);
+export const login = async (
+  email: string,
+  password: string
+): Promise<{ success: boolean; user?: User; error?: string }> => {
+  const supabase = getSupabaseClient();
 
-  if (!user) {
-    return { success: false, error: 'Benutzer nicht gefunden' };
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    if (error.message.includes('Invalid login')) {
+      return { success: false, error: 'E-Mail oder Passwort falsch' };
+    }
+    return { success: false, error: error.message };
   }
 
-  // Verify password
-  const passwords = JSON.parse(localStorage.getItem('glow_passwords') || '{}');
-  if (passwords[email] !== password) {
-    return { success: false, error: 'Falsches Passwort' };
+  if (!data.user) {
+    return { success: false, error: 'Anmeldung fehlgeschlagen' };
   }
 
-  // Set as current user
-  localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+  // Fetch user profile
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', data.user.id)
+    .single();
 
-  return { success: true, user };
+  if (!profile) {
+    return { success: false, error: 'Profil nicht gefunden' };
+  }
+
+  return { success: true, user: profileToUser(profile) };
 };
 
 // Logout user
-export const logout = () => {
-  localStorage.removeItem(AUTH_KEY);
+export const logout = async (): Promise<void> => {
+  const supabase = getSupabaseClient();
+  await supabase.auth.signOut();
 };
 
 // Update user profile
-export const updateUser = (updates: Partial<User>): { success: boolean; user?: User; error?: string } => {
-  const currentUser = getCurrentUser();
-  if (!currentUser) {
+export const updateUser = async (
+  updates: Partial<{
+    firstName: string;
+    lastName: string;
+    phone: string;
+    dateOfBirth: string;
+    address: {
+      street: string;
+      city: string;
+      postalCode: string;
+    };
+  }>
+): Promise<{ success: boolean; user?: User; error?: string }> => {
+  const supabase = getSupabaseClient();
+
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
     return { success: false, error: 'Nicht angemeldet' };
   }
 
-  const users = getUsers();
-  const userIndex = users.findIndex(u => u.id === currentUser.id);
-
-  if (userIndex === -1) {
-    return { success: false, error: 'Benutzer nicht gefunden' };
+  const updateData: Record<string, unknown> = {};
+  if (updates.firstName !== undefined) updateData.first_name = updates.firstName;
+  if (updates.lastName !== undefined) updateData.last_name = updates.lastName;
+  if (updates.phone !== undefined) updateData.phone = updates.phone;
+  if (updates.address) {
+    updateData.address = updates.address.street;
+    updateData.city = updates.address.city;
+    updateData.postal_code = updates.address.postalCode;
   }
 
-  const updatedUser = { ...users[userIndex], ...updates };
-  users[userIndex] = updatedUser;
-  saveUsers(users);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await (supabase as any)
+    .from('profiles')
+    .update(updateData)
+    .eq('id', user.id);
 
-  // Update current user
-  localStorage.setItem(AUTH_KEY, JSON.stringify(updatedUser));
+  if (error) {
+    return { success: false, error: error.message };
+  }
 
-  return { success: true, user: updatedUser };
+  // Fetch updated profile
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+    .single();
+
+  if (!profile) {
+    return { success: false, error: 'Profil nicht gefunden' };
+  }
+
+  return { success: true, user: profileToUser(profile) };
+};
+
+// Check if user is admin
+export const isAdmin = async (): Promise<boolean> => {
+  const user = await getCurrentUser();
+  return user?.isAdmin ?? false;
 };

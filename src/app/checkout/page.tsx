@@ -56,7 +56,7 @@ export default function CheckoutPage() {
     // Simulate payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    const result = createBooking(
+    const result = await createBooking(
       user.id,
       cart,
       paymentMethod === 'card' ? 'Kreditkarte' : paymentMethod === 'twint' ? 'TWINT' : 'Barzahlung',
