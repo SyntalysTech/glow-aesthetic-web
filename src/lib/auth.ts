@@ -42,16 +42,24 @@ const profileToUser = (profile: Profile): User => ({
 
 // Get current user profile
 export const getCurrentUser = async (): Promise<User | null> => {
+  console.log('getCurrentUser - Starting...');
   const supabase = getSupabaseClient();
+  console.log('getCurrentUser - Calling supabase.auth.getSession()...');
 
-  const { data: { user } } = await supabase.auth.getUser();
+  // Use getSession instead of getUser - it's faster and uses local data
+  const { data: { session }, error: authError } = await supabase.auth.getSession();
+  console.log('getCurrentUser - Session:', session?.user?.id, 'Error:', authError?.message);
+
+  const user = session?.user;
   if (!user) return null;
 
-  const { data: profile } = await supabase
+  const { data: profile, error: profileError } = await supabase
     .from('profiles')
     .select('*')
     .eq('id', user.id)
     .single();
+
+  console.log('getCurrentUser - Profile:', profile, 'Error:', profileError?.message);
 
   if (!profile) return null;
 
@@ -153,14 +161,18 @@ export const login = async (
   }
 
   // Fetch user profile
-  const { data: profile } = await supabase
+  const { data: profile, error: profileError } = await supabase
     .from('profiles')
     .select('*')
     .eq('id', data.user.id)
     .single();
 
+  console.log('Login - User ID:', data.user.id);
+  console.log('Login - Profile query result:', profile);
+  console.log('Login - Profile query error:', profileError);
+
   if (!profile) {
-    return { success: false, error: 'Profil nicht gefunden' };
+    return { success: false, error: `Profil nicht gefunden (User ID: ${data.user.id}, Error: ${profileError?.message || 'none'})` };
   }
 
   return { success: true, user: profileToUser(profile) };

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { updateUser } from '@/lib/auth';
 import { getUserBookings, Booking } from '@/lib/bookings';
-import { User, Mail, Phone, MapPin, Calendar, LogOut, Edit2, Save, X, ShoppingBag } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Calendar, LogOut, Edit2, Save, X, ShoppingBag, Shield } from 'lucide-react';
 import Header from '@/components/Header';
 import Link from 'next/link';
 
@@ -23,7 +23,7 @@ const specialistPhotos: Record<string, string> = {
 };
 
 export default function ProfilePage() {
-  const { user, isAuthenticated, isLoading, logout, refreshUser } = useAuth();
+  const { user, isAuthenticated, isLoading, isAdmin, logout, refreshUser } = useAuth();
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -161,6 +161,16 @@ export default function ProfilePage() {
               </p>
             </div>
             <div className="flex gap-3">
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  className="px-6 py-3 rounded-full font-medium text-white flex items-center gap-2 transition-all"
+                  style={{ backgroundColor: charcoal }}
+                >
+                  <Shield size={18} />
+                  <span className="hidden sm:inline">Admin Panel</span>
+                </Link>
+              )}
               <Link
                 href="/booking"
                 className="px-6 py-3 rounded-full font-medium text-white flex items-center gap-2 transition-all"

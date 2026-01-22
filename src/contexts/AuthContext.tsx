@@ -46,13 +46,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    console.log('AuthContext: Starting initialization...');
     const supabase = getSupabaseClient();
+    console.log('AuthContext: Supabase client created');
 
     // Initial session check
     const initAuth = async () => {
+      console.log('AuthContext: initAuth started');
       setIsLoading(true);
-      await refreshUser();
+      try {
+        await refreshUser();
+        console.log('AuthContext: refreshUser completed');
+      } catch (error) {
+        console.error('AuthContext: refreshUser error:', error);
+      }
       setIsLoading(false);
+      console.log('AuthContext: isLoading set to false');
     };
 
     initAuth();
