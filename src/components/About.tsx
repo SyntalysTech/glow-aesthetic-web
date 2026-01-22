@@ -79,7 +79,7 @@ export default function About() {
             >
               <div className="aspect-square">
                 <img
-                  src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
+                  src="https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Skincare products"
                   className="w-full h-full object-cover"
                 />

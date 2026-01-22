@@ -241,7 +241,7 @@ export default function Subscriptions() {
             >
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
                 <img
-                  src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=1976&fit=crop"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop"
                   alt="Facial Specialist"
                   className="w-full h-full object-cover"
                 />
@@ -325,7 +325,11 @@ export default function Subscriptions() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className={`grid gap-8 ${
+            currentSubscriptions.length <= 2
+              ? 'md:grid-cols-2 max-w-3xl mx-auto'
+              : 'md:grid-cols-2 lg:grid-cols-3'
+          }`}
         >
           {currentSubscriptions.map((sub, index) => (
             <motion.div

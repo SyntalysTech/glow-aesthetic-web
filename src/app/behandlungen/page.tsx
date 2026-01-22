@@ -38,7 +38,7 @@ const treatments = [
     name: 'Microneedling',
     subtitle: 'Hauterneuerung & Anti-Aging',
     description: 'Kollagenstimulation für straffere, jugendlichere Haut.',
-    image: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'https://images.pexels.com/photos/5069453/pexels-photo-5069453.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
   },
   {
     slug: 'lash-lifting',

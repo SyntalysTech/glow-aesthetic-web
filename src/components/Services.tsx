@@ -41,7 +41,7 @@ const services = [
     title: 'Microneedling',
     subtitle: 'Tiefenwirksame Verjüngung',
     description: 'Stimuliert die natürliche Kollagenproduktion für straffere und jüngere Haut.',
-    image: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
+    image: 'https://images.pexels.com/photos/5069453/pexels-photo-5069453.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     accent: 'bottom-right',
   },
 ];

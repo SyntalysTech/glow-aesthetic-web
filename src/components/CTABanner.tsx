@@ -114,7 +114,7 @@ export default function CTABanner() {
             >
               <div className="w-48 h-64 rounded-[40px] overflow-hidden shadow-2xl transform rotate-6">
                 <img
-                  src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
+                  src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Beauty treatment"
                   className="w-full h-full object-cover"
                 />

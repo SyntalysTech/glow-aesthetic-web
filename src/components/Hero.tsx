@@ -345,7 +345,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
+              src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
               alt="Skincare"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />

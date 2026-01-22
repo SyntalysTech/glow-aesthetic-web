@@ -20,7 +20,7 @@ const images = [
     alt: 'Beauty portrait',
   },
   {
-    src: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
+    src: 'https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     alt: 'Skincare',
   },
   {

@@ -34,7 +34,7 @@ export default function MicroneedlingPage() {
       <section className="relative min-h-[70vh] flex items-center pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            src="https://images.pexels.com/photos/5069453/pexels-photo-5069453.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
             alt="Microneedling"
             className="w-full h-full object-cover"
           />
@@ -127,7 +127,7 @@ export default function MicroneedlingPage() {
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                  src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                   alt="Microneedling Behandlung"
                   className="w-full h-full object-cover"
                 />

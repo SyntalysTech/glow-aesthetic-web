@@ -44,7 +44,7 @@ const serviceCategories = [
     title: 'Microneedling',
     subtitle: 'Rajeunissement Profond',
     description: 'Stimule la production naturelle de collagène pour une peau plus ferme et plus jeune.',
-    image: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
+    image: 'https://images.pexels.com/photos/5069453/pexels-photo-5069453.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: 'Microneedling Basique', price: '160 CHF', duration: '60 min' },
       { name: 'Microneedling + Luminothérapie', price: '180 CHF', duration: '75 min' },

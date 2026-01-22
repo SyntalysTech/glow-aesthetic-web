@@ -43,7 +43,7 @@ const team = [
   {
     name: 'Elena',
     role: 'Gesichts- & Körper-Expertin',
-    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop',
     description: 'Elena verbindet traditionelle Techniken mit modernster Technologie für strahlende Ergebnisse.',
   },
   {
