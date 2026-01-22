@@ -41,7 +41,7 @@ export default function Hero() {
         {/* Main background image */}
         <div style={{ position: 'absolute', inset: 0 }}>
           <img
-            src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/3997390/pexels-photo-3997390.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
             alt="Luxury spa treatment"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -323,7 +323,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
               alt="Facial treatment"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -345,7 +345,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
               alt="Skincare"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />

@@ -92,7 +92,7 @@ export default function Testimonials() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
           alt="Spa atmosphere"
           className="w-full h-full object-cover"
         />

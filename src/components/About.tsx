@@ -65,7 +65,7 @@ export default function About() {
             >
               <div className="aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Professional beauty treatment"
                   className="w-full h-full object-cover"
                 />
@@ -79,7 +79,7 @@ export default function About() {
             >
               <div className="aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Skincare products"
                   className="w-full h-full object-cover"
                 />

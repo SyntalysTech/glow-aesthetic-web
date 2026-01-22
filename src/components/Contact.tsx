@@ -71,7 +71,7 @@ export default function Contact() {
               {/* Salon interior image */}
               <div className="aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=2072&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=2072&fit=crop"
                   alt="Glow Aesthetics salon interior"
                   className="w-full h-full object-cover"
                 />

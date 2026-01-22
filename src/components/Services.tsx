@@ -17,7 +17,7 @@ const services = [
     title: 'Wimpernverlängerung',
     subtitle: 'Wimpern Extensions',
     description: 'Erhalten Sie einen dauerhaften Wow-Effekt mit natürlich aussehenden Wimpern, die Ihren Blick betonen.',
-    image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=2187&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     accent: 'top-right',
   },
   {
@@ -25,7 +25,7 @@ const services = [
     title: 'Gesichtsbehandlungen',
     subtitle: 'Gesichtspflege',
     description: 'Strahlende Haut durch personalisierte Pflegekonzepte. Von Glow Gold bis Anti-Aging.',
-    image: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     accent: 'bottom-left',
   },
   {
@@ -33,7 +33,7 @@ const services = [
     title: 'Icoone Laser',
     subtitle: 'Innovative Technologie',
     description: 'Spitzentechnologie für Hautstraffung und Körpermodellierung mit sichtbaren Ergebnissen.',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2044&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     accent: 'top-left',
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: 'Microneedling',
     subtitle: 'Tiefenwirksame Verjüngung',
     description: 'Stimuliert die natürliche Kollagenproduktion für straffere und jüngere Haut.',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     accent: 'bottom-right',
   },
 ];

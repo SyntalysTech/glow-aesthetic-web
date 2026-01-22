@@ -24,7 +24,7 @@ export default function CTABanner() {
           {/* Background */}
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2074&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=2074&fit=crop"
               alt="Beautiful woman portrait"
               className="w-full h-full object-cover"
             />
@@ -114,7 +114,7 @@ export default function CTABanner() {
             >
               <div className="w-48 h-64 rounded-[40px] overflow-hidden shadow-2xl transform rotate-6">
                 <img
-                  src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Beauty treatment"
                   className="w-full h-full object-cover"
                 />
@@ -125,7 +125,7 @@ export default function CTABanner() {
                 className="absolute -bottom-4 -left-8 w-32 h-40 rounded-3xl overflow-hidden shadow-xl transform -rotate-6"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
                   alt="Eyelash extension"
                   className="w-full h-full object-cover"
                 />

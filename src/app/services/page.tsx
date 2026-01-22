@@ -18,7 +18,7 @@ const serviceCategories = [
     title: 'Soins du Visage',
     subtitle: 'Préime Dermafacial',
     description: 'Soins personnalisés pour chaque type de peau. Du nettoyage profond à l\'anti-âge.',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: 'Glow Gold', price: 'à partir de 220 CHF', duration: '60-90 min' },
       { name: 'Glow Aging', price: 'à partir de 90 CHF', duration: '45-60 min' },
@@ -31,7 +31,7 @@ const serviceCategories = [
     title: 'Wimpernverlängerung',
     subtitle: 'Extensions de Cils',
     description: 'Extensions de cils professionnelles pour un effet wow naturel et durable.',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: 'Set Complet Classic', price: 'à partir de 180 CHF', duration: '120 min' },
       { name: 'Set Complet Volume', price: 'à partir de 220 CHF', duration: '150 min' },
@@ -44,7 +44,7 @@ const serviceCategories = [
     title: 'Microneedling',
     subtitle: 'Rajeunissement Profond',
     description: 'Stimule la production naturelle de collagène pour une peau plus ferme et plus jeune.',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3865557/pexels-photo-3865557.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: 'Microneedling Basique', price: '160 CHF', duration: '60 min' },
       { name: 'Microneedling + Luminothérapie', price: '180 CHF', duration: '75 min' },
@@ -56,7 +56,7 @@ const serviceCategories = [
     title: 'Icoone Laser',
     subtitle: 'Technologie de Pointe',
     description: 'Soins avec technologie Icoone pour le raffermissement, le drainage et le remodelage corporel.',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2044&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: '1 Zone', price: '99 CHF', duration: '30 min' },
       { name: '2 Zones', price: '120 CHF', duration: '45 min' },
@@ -71,7 +71,7 @@ const serviceCategories = [
     title: 'Augenbrauen',
     subtitle: 'Sourcils Parfaits',
     description: 'Design, teinture et lamination des sourcils pour encadrer votre regard.',
-    image: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop',
     services: [
       { name: 'Design de sourcils', price: 'à partir de 30 CHF', duration: '20 min' },
       { name: 'Teinture de sourcils', price: 'à partir de 25 CHF', duration: '15 min' },
@@ -213,7 +213,7 @@ export default function ServicesPage() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/3997390/pexels-photo-3997390.jpeg?auto=compress&cs=tinysrgb&w=2070&fit=crop"
             alt="Services background"
             className="w-full h-full object-cover"
           />

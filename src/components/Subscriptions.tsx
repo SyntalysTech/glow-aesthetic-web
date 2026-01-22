@@ -215,7 +215,7 @@ export default function Subscriptions() {
             >
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=1961&fit=crop"
                   alt="Lash Specialist"
                   className="w-full h-full object-cover"
                 />
@@ -241,7 +241,7 @@ export default function Subscriptions() {
             >
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=1976&fit=crop"
                   alt="Facial Specialist"
                   className="w-full h-full object-cover"
                 />
@@ -267,7 +267,7 @@ export default function Subscriptions() {
             >
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden" style={{ border: `3px solid ${blush}33` }}>
                 <img
-                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3762940/pexels-photo-3762940.jpeg?auto=compress&cs=tinysrgb&w=1974&fit=crop"
                   alt="Icoone Specialist"
                   className="w-full h-full object-cover"
                 />
