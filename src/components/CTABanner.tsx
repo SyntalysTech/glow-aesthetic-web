@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 
-const blush = '#D6B7B4';
+const blush = '#baaeb1';
 const charcoal = '#2D2D2D';
 
 export default function CTABanner() {

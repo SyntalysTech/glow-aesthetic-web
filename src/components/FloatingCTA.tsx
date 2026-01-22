@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Calendar, X, Phone } from 'lucide-react';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
 
 export default function FloatingCTA() {

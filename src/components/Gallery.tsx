@@ -3,7 +3,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const blush = '#D6B7B4';
+const blush = '#baaeb1';
 const charcoal = '#2D2D2D';
 
 const images = [

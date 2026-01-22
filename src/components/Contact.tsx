@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Phone, Clock, Instagram, ExternalLink } from 'lucide-react';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
-const cream = '#F9F5F4';
+const cream = '#f7f7f7';
 
 const scheduleItems = [
   { day: 'Montag - Freitag', hours: '09:00 - 19:00' },

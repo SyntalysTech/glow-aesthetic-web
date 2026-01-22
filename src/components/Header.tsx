@@ -6,8 +6,8 @@ import { Menu, X, Phone, MapPin, Instagram, User as UserIcon } from 'lucide-reac
 import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
 
 const navItems = [
@@ -149,14 +149,13 @@ export default function Header() {
           <Link href="/" style={{ position: 'relative', zIndex: 10, textDecoration: 'none' }}>
             <motion.div whileHover={{ scale: 1.02 }}>
               <img
-                src="/images/logo.png"
+                src={isScrolled || isMobileMenuOpen ? '/images/logo-black.png' : '/images/logo-white.png'}
                 alt="Glow Aesthetics"
                 style={{
                   height: '48px',
                   width: 'auto',
                   objectFit: 'contain',
-                  filter: isScrolled || isMobileMenuOpen ? 'invert(1) brightness(0.3)' : 'none',
-                  transition: 'filter 0.3s ease',
+                  transition: 'opacity 0.3s ease',
                 }}
               />
             </motion.div>

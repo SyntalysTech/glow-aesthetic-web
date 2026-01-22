@@ -5,8 +5,8 @@ import { useRef } from 'react';
 import { ArrowDown, Star } from 'lucide-react';
 import Link from 'next/link';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
 
 export default function Hero() {
@@ -151,9 +151,9 @@ export default function Hero() {
                   color: charcoal,
                 }}
               >
-                Ihr{' '}
+                Your{' '}
                 <span style={{ position: 'relative', display: 'inline-block' }}>
-                  <span style={{ position: 'relative', zIndex: 10 }}>Strahlen</span>
+                  <span style={{ position: 'relative', zIndex: 10 }}>Glow</span>
                   <motion.span
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -171,8 +171,8 @@ export default function Hero() {
                   />
                 </span>
                 <br />
-                ist unsere{' '}
-                <span style={{ fontStyle: 'italic', color: blush }}>Leidenschaft</span>
+                is Our{' '}
+                <span style={{ fontStyle: 'italic', color: blush }}>Flow</span>
               </h1>
             </motion.div>
 

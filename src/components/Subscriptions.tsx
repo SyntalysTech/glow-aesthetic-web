@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Check, Sparkles } from 'lucide-react';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
-const cream = '#F9F5F4';
+const cream = '#f7f7f7';
 
 const subscriptionCategories = [
   {

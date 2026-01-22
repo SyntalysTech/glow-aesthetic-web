@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Check, AlertCircle, Download } from 'lucide-react';
 
-const blush = '#D6B7B4';
+const blush = '#baaeb1';
 const charcoal = '#2D2D2D';
 
 interface ConsentDocumentProps {

@@ -8,10 +8,10 @@ import { User, Mail, Phone, Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
-const cream = '#F9F5F4';
+const cream = '#f7f7f7';
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);

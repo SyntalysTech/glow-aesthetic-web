@@ -9,10 +9,10 @@ import ConsentDocument from '@/components/ConsentDocument';
 import { CreditCard, Smartphone, Banknote, Shield, Check, Loader } from 'lucide-react';
 import Header from '@/components/Header';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
-const cream = '#F9F5F4';
+const cream = '#f7f7f7';
 
 export default function CheckoutPage() {
   const { user, isAuthenticated } = useAuth();

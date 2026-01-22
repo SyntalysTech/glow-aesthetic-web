@@ -4,10 +4,10 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Sparkles, Heart, Award, Clock } from 'lucide-react';
 
-const blush = '#D6B7B4';
-const blushDark = '#C4A5A2';
+const blush = '#baaeb1';
+const blushDark = '#a69c9e';
 const charcoal = '#2D2D2D';
-const cream = '#F9F5F4';
+const cream = '#f7f7f7';
 
 const features = [
   {
@@ -189,7 +189,7 @@ function FeatureItem({
       className="flex items-start gap-4 group"
     >
       <div
-        className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#D6B7B4]"
+        className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#baaeb1]"
         style={{ backgroundColor: `${blush}1A` }}
       >
         <feature.icon

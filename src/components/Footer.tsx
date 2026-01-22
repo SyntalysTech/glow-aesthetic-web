@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Phone, MapPin, Heart } from 'lucide-react';
 
-const blush = '#D6B7B4';
+const blush = '#baaeb1';
 const charcoal = '#2D2D2D';
 
 export default function Footer() {
@@ -37,8 +37,8 @@ export default function Footer() {
               Ihr Beauty-Destination in Horgen. Professionelle Behandlungen, die Ihre
               natürliche Schönheit in einem exklusiven und entspannenden Ambiente unterstreichen.
             </p>
-            <p className="italic text-lg" style={{ color: blush }}>
-              Ihr Strahlen ist unsere Leidenschaft
+            <p className="italic text-lg tracking-wider" style={{ color: blush }}>
+              Your Glow is Our Flow
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
                 { name: 'Startseite', href: '/' },
                 { name: 'Services', href: '/services' },
                 { name: 'Kontakt', href: '/contact' },
-                { name: 'Termin Buchen', href: 'https://www.salonkee.ch/salon/glow-aesthetics' },
+                { name: 'Termin Buchen', href: '/booking' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
